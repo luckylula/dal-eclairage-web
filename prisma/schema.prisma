@@ -1,0 +1,35 @@
+// DAL Éclairage Hitech — Neon PostgreSQL
+// https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  titre     String
+  contenu   String
+  image     String?
+  date      DateTime @default(now())
+  publie    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contact {
+  id          Int      @id @default(autoincrement())
+  nom         String
+  email       String
+  telephone   String?
+  typeEspace  String?
+  surface     String?
+  ambiance    String?
+  budget      String?
+  description String?
+  createdAt   DateTime @default(now())
+}
