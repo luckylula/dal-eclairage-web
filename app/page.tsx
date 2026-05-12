@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import { HomeAboutBand } from "@/components/HomeAboutBand";
 import { HomeHeroCarousel } from "@/components/HomeHeroCarousel";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { heroCarouselSlides } from "@/lib/hero-carousel";
-import { homeAboutInteriorSrc } from "@/lib/home-about";
 import { marques } from "@/lib/marques";
 import { realisations } from "@/lib/realisations-data";
 
@@ -31,40 +30,13 @@ export default function HomePage() {
     <>
       <HomeHeroCarousel slides={heroCarouselSlides} />
 
-      <section className="bg-white">
-        <div className="relative min-h-[60vh] lg:min-h-[72vh]">
-          <Image
-            src={homeAboutInteriorSrc}
-            alt="[Intérieur — réalisation DAL]"
-            fill
-            priority={false}
-            className="object-cover"
-            sizes="100vw"
-          />
-
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/75 via-white/0 to-white/0" />
-
-          {/* Bandas blancas de separación (1 cm arriba y 1 cm abajo) */}
-          <div className="pointer-events-none absolute left-0 right-0 top-0 h-[1cm] bg-white z-10" />
-          <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-[1cm] bg-white z-10" />
-          {/* Bandas blancas de separación (1 cm izquierda y 1 cm derecha) */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[1cm] bg-white z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-[1cm] bg-white z-10" />
-
-          {/* Cajita de texto pegada a la parte inferior */}
-          <div className="absolute bottom-[1cm] left-0 right-0 z-20">
-            <div className="w-full max-w-content px-6 pb-0 lg:px-10">
-              <div className="flex min-h-[26rem] w-full max-w-[26rem] flex-col justify-end transform -translate-x-4 rounded border-2 border-black bg-white/90 p-6 shadow-xl backdrop-blur-sm sm:p-8">
-                <SectionHeading
-                  eyebrow="Qui sommes-nous"
-                  title="DAL Éclairage Hitech, partenaire lumière des pros"
-                  lead="[Paragraphe introductif — placeholder. Présentation de l’entreprise, son ancrage à Genève, son réseau de fabricants et son approche conseil pour architectes, décorateurs et entreprises.]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeAboutBand>
+        <SectionHeading
+          eyebrow="Qui sommes-nous"
+          title="DAL Éclairage Hitech, partenaire lumière des pros"
+          lead="[Paragraphe introductif — placeholder. Présentation de l’entreprise, son ancrage à Genève, son réseau de fabricants et son approche conseil pour architectes, décorateurs et entreprises.]"
+        />
+      </HomeAboutBand>
 
       <section className="bg-black py-20 text-white lg:py-28">
         <div className="mx-auto max-w-content px-6 lg:px-10">

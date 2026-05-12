@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Dossier projet sur OneDrive : `.next` peut corrompre des liens (EINVAL readlink).
-  // Sortie build/dev hors du nom par défaut pour éviter ce cas.
-  distDir: ".next-local",
+  // OneDrive (Windows) : le dossier `.next` par défaut peut poser problème (EINVAL readlink).
+  // Sur Vercel, il faut impérativement la sortie standard `.next` (VERCEL est défini en build).
+  ...(!process.env.VERCEL ? { distDir: ".next-local" } : {}),
   images: {
     remotePatterns: [
       {
