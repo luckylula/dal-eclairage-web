@@ -52,11 +52,10 @@ export default function VotreProjetPage() {
               Accompagnement
             </p>
             <h1 className="mt-4 font-serif text-4xl leading-tight text-white sm:text-5xl md:text-6xl text-balance">
-              Expertise de lumière au service des professionnels
+              Spécialiste en éclairage technique et architectural sur Genève.
             </h1>
             <p className="mt-6 font-sans text-lg text-white/90">
-              [Intro — placeholder. Déposez votre brief : nous revenons vers vous avec une première piste
-              lumineuse.]
+              Nous accompagnons architectes, bureaux d&apos;étude et professionnels du bâtiment dans leurs projets d&apos;éclairage.
             </p>
           </div>
         </div>

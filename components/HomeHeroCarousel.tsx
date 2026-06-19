@@ -69,17 +69,28 @@ export function HomeHeroCarousel({ slides }: Props) {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/75 via-black/40 to-black/25" />
 
       <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-content flex-col justify-end px-6 pb-24 pt-32 sm:pb-28 lg:px-10 lg:pb-32">
-        <p className="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
+        <p
+          className="hero-anim hero-from-left font-sans text-xs font-semibold uppercase tracking-[0.28em] text-white/80"
+          style={{ ["--hero-delay" as never]: "120ms" }}
+        >
           Genève · Suisse
         </p>
-        <h1 className="mt-4 max-w-3xl font-sans text-4xl font-medium leading-tight tracking-wide text-balance text-white sm:text-5xl md:text-5xl xl:text-6xl">
-          Expertise de lumière au service des professionnels
+        <h1
+          className="hero-anim hero-from-left mt-4 max-w-3xl font-sans text-4xl font-medium leading-tight tracking-wide text-balance text-white sm:text-5xl md:text-5xl xl:text-6xl"
+          style={{ ["--hero-delay" as never]: "240ms" }}
+        >
+          Spécialiste en éclairage technique et architectural sur Genève.
         </h1>
-        <p className="mt-6 max-w-xl font-sans text-lg text-white/85">
-          [Sous-titre court — placeholder. Distribution, conseil et suivi de projets
-          d&apos;éclairage haut de gamme.]
+        <p
+          className="hero-anim hero-from-left mt-6 max-w-xl font-sans text-lg text-white/85"
+          style={{ ["--hero-delay" as never]: "420ms" }}
+        >
+          Nous accompagnons architectes, bureaux d&apos;étude et professionnels du bâtiment dans leurs projets d&apos;éclairage.
         </p>
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div
+          className="hero-anim hero-from-bottom mt-10 flex flex-wrap gap-4"
+          style={{ ["--hero-delay" as never]: "600ms" }}
+        >
           <Link
             href="/votre-projet"
             className="pointer-events-auto inline-flex items-center justify-center border border-white bg-white px-8 py-3 font-sans text-sm font-medium text-ink transition hover:bg-cream"
@@ -94,7 +105,10 @@ export function HomeHeroCarousel({ slides }: Props) {
           </Link>
         </div>
 
-        <div className="pointer-events-auto mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <div
+          className="hero-anim hero-from-right pointer-events-auto mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+          style={{ ["--hero-delay" as never]: "780ms" }}
+        >
           <div className="flex items-center gap-2" role="tablist" aria-label="Choisir une diapositive">
             {slides.map((slide, i) => (
               <button

@@ -1,4 +1,4 @@
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { MarqueBrandVisual } from "@/components/MarqueBrandVisual";
 import { marquesHeroVideoSrc } from "@/lib/marques-media";
 import { marques } from "@/lib/marques";
 
@@ -38,25 +38,35 @@ export default function MarquesPage() {
         <div className="mx-auto max-w-content space-y-20 px-6 lg:px-10">
           {marques.map((m, index) => {
             const visuel = (
-              <PlaceholderImage
-                seed={`dal-marque-${m.slug}`}
-                alt={`[Visuel ${m.nom} — placeholder]`}
-                aspectClassName="aspect-[16/10]"
-                className="border border-line"
+              <MarqueBrandVisual
+                nom={m.nom}
+                imageSrc={m.imageSrc}
+                fit={m.imageFit}
+                tone={m.imageTone}
               />
             );
             const texte = (
               <div>
                 <h2 className="font-serif text-3xl text-ink sm:text-4xl">{m.nom}</h2>
                 <p className="mt-4 font-sans text-base leading-relaxed text-muted">{m.description}</p>
-                <a
-                  href={m.siteFabricant}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex border border-ink px-6 py-2.5 font-sans text-sm font-medium text-ink transition hover:bg-ink hover:text-white"
-                >
-                  Site fabricant (placeholder)
-                </a>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href={m.siteFabricant}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex border border-ink px-6 py-2.5 font-sans text-sm font-medium text-ink transition hover:bg-ink hover:text-white"
+                  >
+                    Site web
+                  </a>
+                  <a
+                    href={m.lienCatalogue}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex border border-dal px-6 py-2.5 font-sans text-sm font-medium text-dal transition hover:bg-dal hover:text-white"
+                  >
+                    Catalogue
+                  </a>
+                </div>
               </div>
             );
             return (

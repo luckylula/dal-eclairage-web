@@ -7,17 +7,18 @@ import { equipe } from "@/lib/societe-data";
 
 const valeurs = [
   {
-    titre: "[Excellence — placeholder]",
-    texte: "[Description courte — placeholder. Qualité produit et exigence du rendu.]",
+    titre: "Échange sincère et durable",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-        <path strokeWidth="1.5" d="M12 3l2.4 7.4H22l-6 4.6 2.3 7L12 17.8 5.7 22l2.3-7-6-4.6h7.6L12 3z" />
+        <path
+          strokeWidth="1.5"
+          d="M8 10h8M8 14h5M6 20l2-2h10a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12z"
+        />
       </svg>
     ),
   },
   {
-    titre: "[Proximité — placeholder]",
-    texte: "[Description courte — placeholder. Écoute, réactivité, suivi de chantier.]",
+    titre: "Accompagnement de proximité",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
         <path strokeWidth="1.5" d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z" />
@@ -26,20 +27,10 @@ const valeurs = [
     ),
   },
   {
-    titre: "[Innovation — placeholder]",
-    texte: "[Description courte — placeholder. LED, contrôle, durabilité.]",
+    titre: "Expérience technique",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
         <path strokeWidth="1.5" d="M9 18h6M10 22h4M12 2v1M4 12H3m18 0h-1M5.6 5.6l-.7-.7m14.8 14.8l-.7-.7M5.6 18.4l-.7.7M18.4 5.6l.7-.7M12 6a6 6 0 016 6c0 3-2 5-4 6h-4c-2-1-4-3-4-6a6 6 0 016-6z" />
-      </svg>
-    ),
-  },
-  {
-    titre: "[Transparence — placeholder]",
-    texte: "[Description courte — placeholder. Conseils avisés, budgets lisibles.]",
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-        <path strokeWidth="1.5" d="M4 6h16M4 12h10M4 18h16" />
       </svg>
     ),
   },
@@ -86,16 +77,22 @@ export default function SocietePage() {
             />
             <div className="mt-8 space-y-6 font-sans text-base leading-relaxed text-muted">
               <p>
-                [Paragraphe 1 — placeholder. Genève comme base, réseau européen de fabricants, culture du
-                détail et du service.]
+                Implantée à Genève, DAL ECLAIRAGE HITECH est un acteur local reconnu dans le domaine Dal
+                Eclairage. Forte d&apos;une expérience confirmée, notre équipe travaille auprès des
+                professionnels depuis plus de 15 ans dans la conception et la mise en œuvre de solutions
+                d&apos;éclairage performantes, esthétiques et durables.
               </p>
               <p>
-                [Paragraphe 2 — placeholder. Accompagnement des bureaux d’études, décorateurs et maîtres
-                d’ouvrage sur l’ensemble du cycle projet.]
+                Notre mission est d&apos;être à l&apos;écoute et comprendre vos besoins, s&apos;attacher à
+                construire une relation de confiance fondée sur la proximité, le conseil personnalisé et la
+                réactivité.
               </p>
               <p>
-                [Paragraphe 3 — placeholder. Showroom, échantillons, planification lumière et coordination
-                logistique.]
+                Notre équipe met à disposition son savoir-faire technique afin d&apos;assurer la réussite de
+                chacun de vos projets, de la phase d&apos;étude à la livraison des produits.
+              </p>
+              <p className="font-serif text-lg text-ink">
+                DAL ECLAIRAGE HITECH–Expertise de lumière au service des professionnel
               </p>
             </div>
           </div>
@@ -121,27 +118,33 @@ export default function SocietePage() {
             title="Les visages de DAL"
             lead="[Introduction équipe — placeholder. Profils complémentaires autour du conseil, de la technique et de la relation client.]"
           />
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-10 lg:grid-cols-3">
             {equipe.map((m) => (
-              <article key={m.nom} className="border border-line bg-white p-6 text-center shadow-sm">
-                <div className="mx-auto w-40">
-                  <PlaceholderImage
-                    seed={m.seed}
-                    alt={`[Photo ${m.nom}]`}
-                    aspectClassName="aspect-square"
-                    className="rounded-full border border-line"
-                  />
+              <article key={m.seed} className="flex h-full flex-col border border-line bg-white shadow-sm">
+                <PlaceholderImage
+                  seed={m.seed}
+                  alt={`Photo ${m.nom}`}
+                  aspectClassName="aspect-[3/4]"
+                />
+                <div className="flex flex-1 flex-col p-6 text-left lg:p-8">
+                  <h3 className="font-serif text-xl text-ink">{m.nom}</h3>
+                  {m.role ? (
+                    <p className="mt-1 font-sans text-sm font-medium text-dal">{m.role}</p>
+                  ) : null}
+                  {m.bio ? (
+                    <p className="mt-4 flex-1 font-sans text-sm leading-relaxed text-muted">{m.bio}</p>
+                  ) : null}
+                  {m.linkedin ? (
+                    <Link
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-block font-sans text-xs uppercase tracking-widest text-dal hover:underline"
+                    >
+                      LinkedIn
+                    </Link>
+                  ) : null}
                 </div>
-                <h3 className="mt-6 font-serif text-xl text-ink">{m.nom}</h3>
-                <p className="mt-1 font-sans text-sm text-muted">{m.role}</p>
-                <Link
-                  href={m.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block font-sans text-xs uppercase tracking-widest text-dal hover:underline"
-                >
-                  LinkedIn
-                </Link>
               </article>
             ))}
           </div>
@@ -155,17 +158,14 @@ export default function SocietePage() {
             title="Ce qui guide notre métier"
             align="center"
           />
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
             {valeurs.map((v) => (
               <div
                 key={v.titre}
-                className="flex gap-6 border border-line bg-cream/50 p-8 lg:p-10"
+                className="flex flex-col items-center gap-4 border border-line bg-cream/50 p-8 text-center lg:p-10"
               >
                 <div className="text-dal">{v.icon}</div>
-                <div>
-                  <h3 className="font-serif text-2xl text-ink">{v.titre}</h3>
-                  <p className="mt-3 font-sans text-sm leading-relaxed text-muted">{v.texte}</p>
-                </div>
+                <h3 className="font-serif text-2xl text-ink">{v.titre}</h3>
               </div>
             ))}
           </div>
