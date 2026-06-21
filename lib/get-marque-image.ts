@@ -46,7 +46,10 @@ function listCustomImages(): { file: string; base: string; ext: string }[] {
 
 function findCustomImageSrc(slug: string): string | null {
   const normalizedSlug = normalizeBaseName(slug);
-  const candidates = new Set([normalizedSlug, ...(CUSTOM_ALIASES[slug] ?? []).map(normalizeBaseName)]);
+  const candidates = [
+    normalizedSlug,
+    ...(CUSTOM_ALIASES[slug] ?? []).map(normalizeBaseName),
+  ];
   const files = listCustomImages();
 
   for (const name of candidates) {
