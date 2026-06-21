@@ -63,7 +63,7 @@ export default function SocietePage() {
             La Société
           </h1>
           <p className="mt-6 max-w-2xl font-sans text-lg text-white/90">
-            [Accroche — placeholder. Histoire, équipe et valeurs au service des projets lumineux à Genève.]
+            Expertise de lumière au service des professionnel
           </p>
         </div>
       </section>
@@ -90,9 +90,6 @@ export default function SocietePage() {
               <p>
                 Notre équipe met à disposition son savoir-faire technique afin d&apos;assurer la réussite de
                 chacun de vos projets, de la phase d&apos;étude à la livraison des produits.
-              </p>
-              <p className="font-serif text-lg text-ink">
-                DAL ECLAIRAGE HITECH–Expertise de lumière au service des professionnel
               </p>
             </div>
           </div>
