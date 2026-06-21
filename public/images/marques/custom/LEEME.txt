@@ -1,0 +1,40 @@
+Logos personnalisés — Nos Marques
+=================================
+
+Déposez ici les fichiers image à utiliser à la place des logos actuels.
+Dès qu’un fichier est présent, il remplace automatiquement le visuel sur la page « Nos Marques ».
+
+Nom du fichier
+--------------
+Idéal : le slug exact + extension, par exemple :
+
+  opple-lighting.png
+  led-line.png
+  linealight.svg
+
+Noms courts aussi acceptés pour certaines marques (ex. OPPLE.png → Opple Lighting).
+
+Formats : .png  .svg  .jpg  .jpeg  .webp
+
+Liste des slugs
+---------------
+  nova-luce
+  led-line
+  lluria
+  luxiona
+  linealight
+  opple-lighting
+  siteco
+  kraken-lighting
+  estiluz
+  stilnovo
+  vistosi
+  daylight
+  goccia
+  nte-sistemas
+
+Conseils
+--------
+- Préférez un fond transparent (PNG ou SVG) pour un rendu propre.
+- Un seul fichier par marque : si plusieurs extensions existent, PNG est prioritaire, puis SVG, JPG, WEBP.
+- Rechargez la page après avoir ajouté ou remplacé un fichier (le serveur de dev peut nécessiter un refresh).

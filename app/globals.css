@@ -96,3 +96,83 @@ body {
     transform: none !important;
   }
 }
+
+@layer components {
+  .marque-card {
+    transform: translate3d(0, 0, 0);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+      0 2px 4px rgba(0, 0, 0, 0.04),
+      0 10px 24px rgba(0, 0, 0, 0.07),
+      0 20px 48px rgba(0, 0, 0, 0.04);
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease;
+  }
+
+  .marque-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 3px;
+    background: #cc2229;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .marque-card:hover {
+    transform: translate3d(0, -10px, 0);
+    border-color: rgba(204, 34, 41, 0.25);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      0 4px 8px rgba(0, 0, 0, 0.05),
+      0 16px 32px rgba(0, 0, 0, 0.1),
+      0 28px 56px rgba(0, 0, 0, 0.08);
+  }
+
+  .marque-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marque-card,
+    .marque-card:hover {
+      transform: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .marque-card::after {
+      transform: scaleX(1);
+      opacity: 0.85;
+    }
+  }
+
+  .marques-section-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(26, 26, 26, 0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.45), transparent 92%);
+  }
+
+  .marques-carousel-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .marques-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marque-card-visual img,
+    .marque-card-visual .object-cover,
+    .marque-card-visual .object-contain {
+      transform: none !important;
+    }
+  }
+}
