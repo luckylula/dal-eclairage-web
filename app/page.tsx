@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HomeAboutBand } from "@/components/HomeAboutBand";
+import { HomeAboutSection } from "@/components/HomeAboutSection";
 import { HomeHeroCarousel } from "@/components/HomeHeroCarousel";
 import { HomeTeamSection } from "@/components/HomeTeamSection";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
@@ -30,18 +30,10 @@ export default function HomePage() {
     <>
       <HomeHeroCarousel slides={heroCarouselSlides} />
 
-      <HomeAboutBand>
-        <Reveal direction="left">
-          <SectionHeading
-            eyebrow="Qui sommes-nous"
-            title="DAL Éclairage Hitech, partenaire lumière des pros"
-            lead="Chez DAL Éclairage Hitech, nous ne nous contentons pas de vendre des produits. Nous écoutons, étudions et conseillons chaque projet d'éclairage, fonctionnel, d'ambiance ou décoratif, en tenant compte de vos contraintes techniques et économiques. De la conception à la mise en œuvre, nous vous accompagnons à chaque étape"
-          />
-        </Reveal>
-      </HomeAboutBand>
+      <HomeAboutSection />
 
-      <section className="bg-black py-20 text-white lg:py-28">
-        <div className="mx-auto max-w-content px-6 lg:px-10">
+      <section className="home-section bg-black text-white">
+        <div className="home-section-inner">
           <Reveal direction="left">
             <SectionHeading
               variant="inverted"

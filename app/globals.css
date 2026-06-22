@@ -168,6 +168,14 @@ body {
     display: none;
   }
 
+  .home-section {
+    @apply flex min-h-[78vh] flex-col justify-center py-16 lg:py-20;
+  }
+
+  .home-section-inner {
+    @apply mx-auto w-full max-w-content px-6 lg:px-10;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .marque-card-visual img,
     .marque-card-visual .object-cover,

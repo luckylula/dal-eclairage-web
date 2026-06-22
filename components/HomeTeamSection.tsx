@@ -8,7 +8,7 @@ import { homeTeamGroupPhotoSeed, homeTeamGroupPhotoSrc } from "@/lib/home-team";
 function GroupPhoto() {
   if (homeTeamGroupPhotoSrc) {
     return (
-      <div className="relative aspect-[21/9] w-full overflow-hidden bg-line sm:aspect-[2.4/1]">
+      <div className="relative h-full min-h-[42vh] w-full overflow-hidden bg-line">
         <Image
           src={homeTeamGroupPhotoSrc}
           alt="L'équipe DAL Éclairage Hitech"
@@ -24,15 +24,15 @@ function GroupPhoto() {
     <PlaceholderImage
       seed={homeTeamGroupPhotoSeed}
       alt="[Photo de groupe — équipe DAL]"
-      aspectClassName="aspect-[21/9] sm:aspect-[2.4/1]"
+      aspectClassName="min-h-[42vh] h-full"
     />
   );
 }
 
 export function HomeTeamSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-content px-6 lg:px-10">
+    <section className="home-section bg-white">
+      <div className="home-section-inner">
         <Reveal direction="left">
           <SectionHeading
             eyebrow="Notre équipe"
@@ -42,7 +42,7 @@ export function HomeTeamSection() {
         </Reveal>
 
         <Reveal direction="up" delay={120} className="mt-14">
-          <figure className="group relative overflow-hidden border border-line bg-ink shadow-sm">
+          <figure className="group relative min-h-[42vh] overflow-hidden border border-line bg-ink shadow-sm">
             <GroupPhoto />
             <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-6 pb-6 pt-24 sm:px-10 sm:pb-8">
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.28em] text-dal">

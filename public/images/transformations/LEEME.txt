@@ -1,0 +1,16 @@
+Vidéos de transformation — section « Qui sommes-nous »
+=========================================================
+
+Dossier : public/images/transformations/
+
+Fichiers actuels (un vidéo par transformation, avant → après dans le même fichier) :
+
+  transformation1.mp4
+  transformation2.mp4
+  transformation3.mp4
+
+Format : MP4 H.264 (1920×1080 recommandé).
+
+Pour renommer les titres affichés sur le site, éditez lib/home-transformations.ts
+
+Après ajout ou remplacement d'un fichier : Ctrl+F5 sur la page d'accueil.
