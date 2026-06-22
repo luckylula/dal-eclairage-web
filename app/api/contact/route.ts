@@ -6,6 +6,7 @@ type JsonBody = {
   nom?: unknown;
   email?: unknown;
   telephone?: unknown;
+  entreprise?: unknown;
   typeEspace?: unknown;
   surface?: unknown;
   ambiance?: unknown;
@@ -51,6 +52,7 @@ export async function POST(request: Request) {
         nom,
         email,
         telephone: str(body.telephone),
+        entreprise: str(body.entreprise),
         typeEspace: str(body.typeEspace),
         surface: str(body.surface),
         ambiance: str(body.ambiance),
@@ -83,6 +85,7 @@ export async function POST(request: Request) {
 
       lines.push(
         opt("Téléphone", record.telephone),
+        opt("Entreprise", record.entreprise),
         opt("Type d'espace", record.typeEspace),
         opt("Surface", record.surface),
         opt("Ambiance", record.ambiance),

@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
-import { contactBlock, siteName } from "@/lib/site";
+import { contactBlock, siteName, siteTagline } from "@/lib/site";
 
 export const metadata = {
   title: "Contact",
@@ -14,9 +14,7 @@ export default function ContactPage() {
           <h1 className="mt-4 max-w-2xl font-serif text-4xl text-ink sm:text-5xl md:text-6xl">
             Écrivez-nous
           </h1>
-          <p className="mt-6 max-w-xl font-sans text-lg text-muted">
-            [Accroche — placeholder. Showroom sur rendez-vous, réponse sous 48h ouvrées.]
-          </p>
+          <p className="mt-6 max-w-xl font-sans text-lg text-muted">{siteTagline}</p>
         </div>
       </section>
 
@@ -25,7 +23,7 @@ export default function ContactPage() {
           <div>
             <h2 className="font-serif text-2xl text-ink">Formulaire</h2>
             <p className="mt-2 font-sans text-sm text-muted">
-              [Note — placeholder. Ce message est transmis à l’équipe commerciale.]
+              Votre message est transmis directement à notre équipe.
             </p>
             <div className="mt-8 border border-line bg-cream/30 p-6 sm:p-8">
               <ContactForm />
@@ -41,12 +39,13 @@ export default function ContactPage() {
               ))}
             </address>
             <p className="mt-4 font-sans text-sm text-muted">
-              Tél.{" "}
-              <a className="text-ink hover:text-dal" href={`tel:${contactBlock.phone.replace(/\s/g, "")}`}>
+              Téléphone :{" "}
+              <a className="text-ink hover:text-dal" href={`tel:${contactBlock.phoneTel}`}>
                 {contactBlock.phone}
               </a>
             </p>
             <p className="mt-1 font-sans text-sm text-muted">
+              Email :{" "}
               <a className="text-ink hover:text-dal" href={`mailto:${contactBlock.email}`}>
                 {contactBlock.email}
               </a>
@@ -55,10 +54,11 @@ export default function ContactPage() {
               <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-dal">
                 Horaires
               </h3>
-              <p className="mt-3 font-sans text-sm text-muted">{contactBlock.hours}</p>
-              <p className="mt-4 font-sans text-sm text-muted">
-                [Samedi fermé — placeholder. Rendez-vous hors horaires sur demande.]
-              </p>
+              <div className="mt-3 space-y-1 font-sans text-sm text-muted">
+                {contactBlock.hoursLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -66,18 +66,26 @@ export default function ContactPage() {
 
       <section className="border-t border-line bg-cream">
         <div className="mx-auto max-w-content px-6 py-12 lg:px-10">
-          <h2 className="font-serif text-xl text-ink">Plan (embed placeholder)</h2>
+          <h2 className="font-serif text-xl text-ink">Plan</h2>
           <div className="mt-6 aspect-[21/9] w-full border border-line bg-line">
             <iframe
-              title="[Carte — placeholder]"
-              className="h-full w-full grayscale contrast-125"
+              title="DAL Éclairage Hitech — Rue du Tunnel 11 B, Carouge"
+              className="h-full w-full"
               loading="lazy"
+              allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=6.12%2C46.18%2C6.18%2C46.24&amp;layer=mapnik"
+              src={contactBlock.mapsEmbedUrl}
             />
           </div>
-          <p className="mt-3 font-sans text-xs text-muted">
-            [Carte indicative Genève — placeholder. Remplacer par l’adresse définitive DAL.]
+          <p className="mt-3 font-sans text-sm text-muted">
+            <a
+              href={contactBlock.mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline-offset-4 hover:text-dal hover:underline"
+            >
+              Ouvrir dans Google Maps
+            </a>
           </p>
         </div>
       </section>

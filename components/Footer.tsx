@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteLogo } from "@/components/SiteLogo";
 import { mainNav } from "@/lib/nav";
-import { contactBlock, siteName } from "@/lib/site";
+import { contactBlock, siteName, siteTagline } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -10,10 +10,7 @@ export function Footer() {
         <div>
           <SiteLogo variant="footer" />
           <p className="sr-only">{siteName}</p>
-          <p className="mt-6 font-sans text-base leading-relaxed text-muted">
-            Distributeur d&apos;éclairage professionnel — Genève et région.{" "}
-            <span className="text-ink">[Texte placeholder]</span>
-          </p>
+          <p className="mt-6 font-sans text-base leading-relaxed text-muted">{siteTagline}</p>
         </div>
 
         <div>
@@ -29,7 +26,7 @@ export function Footer() {
           </address>
           <p className="mt-3 font-sans text-base text-muted">
             Tél.{" "}
-            <a className="text-ink hover:text-dal" href={`tel:${contactBlock.phone.replace(/\s/g, "")}`}>
+            <a className="text-ink hover:text-dal" href={`tel:${contactBlock.phoneTel}`}>
               {contactBlock.phone}
             </a>
           </p>
@@ -39,7 +36,13 @@ export function Footer() {
               {contactBlock.email}
             </a>
           </p>
-          <p className="mt-3 font-sans text-base text-muted">{contactBlock.hours}</p>
+          <p className="mt-3 font-sans text-base text-muted">
+            {contactBlock.hoursLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </p>
         </div>
 
         <div>

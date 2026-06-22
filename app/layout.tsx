@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="fr" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="min-h-screen bg-white font-sans text-ink antialiased">
         <Header />
-        <main className="pt-[132px] sm:pt-[142px] md:pt-[150px]">{children}</main>
+        <main className="pt-[156px] sm:pt-[176px] md:pt-[196px]">{children}</main>
         <Footer />
       </body>
     </html>

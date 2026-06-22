@@ -72,14 +72,7 @@ export function HomeAboutBand({ children }: Props) {
           sizes="100vw"
         />
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/75 via-white/0 to-white/0" />
-
-        <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-[1cm] bg-white" />
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[1cm] bg-white" />
-        <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-[1cm] bg-white" />
-        <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-[1cm] bg-white" />
-
-        <div className="absolute bottom-[1cm] left-0 right-0 z-20">
+        <div className="absolute bottom-0 left-0 right-0 z-20">
           <div className="mx-auto w-full max-w-content px-6 pb-0 pr-8 sm:pr-12 lg:px-10 lg:pr-16">
             <div className="min-h-[26rem] w-full max-w-[26rem]">
               <div

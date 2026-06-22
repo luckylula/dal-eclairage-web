@@ -1,29 +1,9 @@
 import Link from "next/link";
-import { FaqAccordion } from "@/components/FaqAccordion";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { ProjetBriefForm } from "@/components/ProjetBriefForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { realisations } from "@/lib/realisations-data";
 import { votreProjetHeroVideoSrc } from "@/lib/votre-projet-media";
-
-const accompagnement = [
-  {
-    titre: "[Étude & conseil — placeholder]",
-    texte: "[Analyse des usages, normes, confort visuel et cohérence esthétique.]",
-  },
-  {
-    titre: "[Sélection produits — placeholder]",
-    texte: "[Propositions techniques, échantillons et comparatifs fabricants.]",
-  },
-  {
-    titre: "[Logistique & suivi — placeholder]",
-    texte: "[Coordination délais, livraisons et support jusqu’à la mise en service.]",
-  },
-  {
-    titre: "[Après-vente — placeholder]",
-    texte: "[Assistance SAV, pièces détachées et évolutions lumineuses.]",
-  },
-];
 
 export const metadata = {
   title: "Votre Projet",
@@ -52,29 +32,12 @@ export default function VotreProjetPage() {
               Accompagnement
             </p>
             <h1 className="mt-4 font-serif text-4xl leading-tight text-white sm:text-5xl md:text-6xl text-balance">
-              Spécialiste en éclairage technique et architectural sur Genève.
+              Vous avez un projet d&apos;éclairage ?
             </h1>
             <p className="mt-6 font-sans text-lg text-white/90">
-              Nous accompagnons architectes, bureaux d&apos;étude et professionnels du bâtiment dans leurs projets d&apos;éclairage.
+              Que vous soyez architecte, décorateur ou installateur, nous vous accompagnons de
+              l&apos;étude jusqu&apos;à la réalisation.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20 lg:py-28">
-        <div className="mx-auto max-w-content px-6 lg:px-10">
-          <SectionHeading
-            eyebrow="Méthode"
-            title="Un accompagnement structuré, sans jargon inutile"
-            lead="[Texte — placeholder. Quatre étapes types pour sécuriser votre projet d’éclairage.]"
-          />
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {accompagnement.map((a) => (
-              <div key={a.titre} className="border border-line bg-cream/40 p-8 lg:p-10">
-                <h3 className="font-serif text-2xl text-ink">{a.titre}</h3>
-                <p className="mt-3 font-sans text-sm leading-relaxed text-muted">{a.texte}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -84,7 +47,7 @@ export default function VotreProjetPage() {
           <SectionHeading
             eyebrow="Brief"
             title="Parlez-nous de votre espace"
-            lead="[Formulaire — placeholder. Les champs marqués * sont obligatoires.]"
+            lead="Les champs marqués * sont obligatoires."
           />
           <div className="mt-12 max-w-3xl border border-line bg-white p-6 sm:p-10">
             <ProjetBriefForm />
@@ -92,22 +55,10 @@ export default function VotreProjetPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-ink py-20 lg:py-28">
         <div className="mx-auto max-w-content px-6 lg:px-10">
           <SectionHeading
-            eyebrow="FAQ"
-            title="Questions fréquentes sur l’éclairage"
-            lead="[Sous-texte — placeholder. Réponses génériques à affiner avec votre expert DAL.]"
-          />
-          <div className="mt-12 max-w-4xl">
-            <FaqAccordion />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-cream py-20 lg:py-28">
-        <div className="mx-auto max-w-content px-6 lg:px-10">
-          <SectionHeading
+            variant="inverted"
             eyebrow="Inspiration"
             title="Réalisations qui posent le ton"
           />

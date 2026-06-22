@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import type { HeroSlide } from "@/lib/hero-carousel";
 
@@ -87,26 +86,9 @@ export function HomeHeroCarousel({ slides }: Props) {
         >
           Nous accompagnons architectes, bureaux d&apos;étude et professionnels du bâtiment dans leurs projets d&apos;éclairage.
         </p>
-        <div
-          className="hero-anim hero-from-bottom mt-10 flex flex-wrap gap-4"
-          style={{ ["--hero-delay" as never]: "600ms" }}
-        >
-          <Link
-            href="/votre-projet"
-            className="pointer-events-auto inline-flex items-center justify-center border border-white bg-white px-8 py-3 font-sans text-sm font-medium text-ink transition hover:bg-cream"
-          >
-            Votre projet
-          </Link>
-          <Link
-            href="/marques"
-            className="pointer-events-auto inline-flex items-center justify-center border border-white/60 px-8 py-3 font-sans text-sm font-medium text-white transition hover:bg-white/10"
-          >
-            Nos marques
-          </Link>
-        </div>
 
         <div
-          className="hero-anim hero-from-right pointer-events-auto mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+          className="hero-anim hero-from-right pointer-events-auto mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
           style={{ ["--hero-delay" as never]: "780ms" }}
         >
           <div className="flex items-center gap-2" role="tablist" aria-label="Choisir une diapositive">
