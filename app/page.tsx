@@ -30,7 +30,7 @@ export default function HomePage() {
     <>
       <HomeHeroCarousel slides={heroCarouselSlides} />
 
-      <HomeAboutSection />
+      <HomeTeamSection />
 
       <section className="home-section bg-black text-white">
         <div className="home-section-inner">
@@ -69,7 +69,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HomeTeamSection />
+      <HomeAboutSection />
 
       <section className="border-y border-white/20 bg-black py-20 text-white lg:py-28">
         <div className="mx-auto max-w-content px-6 lg:px-10">
