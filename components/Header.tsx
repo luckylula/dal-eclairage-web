@@ -29,7 +29,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-black/15 bg-white/95 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-black/15 bg-white">
       <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-6 py-5 sm:py-6 lg:gap-10 lg:px-10">
         <Link
           href="/"

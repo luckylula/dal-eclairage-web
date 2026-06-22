@@ -2,10 +2,10 @@
 
 export const logoFooterSrc = "/images/logo/dal_logo.png";
 
-/** Logo animé haute résolution — 1920×1080. */
-export const logoHeaderVideoSrc = encodeURI("/images/logo/eclairage dal.mov");
+/** Logo bombilla — 1120×1088 H.264. */
+export const logoHeaderVideoSrc = encodeURI("/images/logo/Bombilla iluminada.mp4");
 
 export const logoHeaderPosterSrc = encodeURI("/images/logo/logo dal resol.png");
 
-export const logoHeaderVideoWidth = 1920;
-export const logoHeaderVideoHeight = 1080;
+export const logoHeaderVideoWidth = 1120;
+export const logoHeaderVideoHeight = 1088;

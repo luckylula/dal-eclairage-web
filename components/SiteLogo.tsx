@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {
   logoFooterSrc,
-  logoHeaderPosterSrc,
   logoHeaderVideoHeight,
   logoHeaderVideoSrc,
   logoHeaderVideoWidth,
@@ -17,7 +16,7 @@ type Props = {
 const footerSizeClass = "h-[6.25rem] w-auto sm:h-[7rem] md:h-[8rem]";
 
 const headerVideoClass =
-  "logo-header-video block h-[7rem] w-auto max-w-[min(22rem,60vw)] object-contain object-left sm:h-[7.75rem] md:h-[8.5rem]";
+  "logo-header-video block h-[7.75rem] w-auto max-w-[min(24rem,65vw)] object-contain object-left sm:h-[8.5rem] md:h-[9.25rem]";
 
 export function SiteLogo({ variant = "header", priority = false, className = "" }: Props) {
   if (variant === "header") {
@@ -31,7 +30,6 @@ export function SiteLogo({ variant = "header", priority = false, className = "" 
         loop
         playsInline
         preload="auto"
-        poster={logoHeaderPosterSrc}
         aria-label={siteName}
         className={`${headerVideoClass} ${className}`}
       />
