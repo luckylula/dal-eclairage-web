@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#FAF8F5",
-        ink: "#1a1a1a",
-        muted: "#6b6b6b",
-        dal: "#CC2229",
-        line: "#e8e8e8",
+        cream: "var(--color-cream)",
+        ink: "var(--color-ink)",
+        muted: "var(--color-muted)",
+        dal: "var(--color-accent)",
+        line: "var(--color-line)",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],

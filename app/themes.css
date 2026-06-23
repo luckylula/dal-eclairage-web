@@ -1,0 +1,327 @@
+/* ─── Thème 2 — noir uniforme, accents dorés ─── */
+html[data-site-theme="2"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --color-cream: #000000;
+  --color-ink: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.72);
+  --color-accent: var(--theme-gold);
+  --color-line: rgba(255, 255, 255, 0.14);
+}
+
+html[data-site-theme="2"] body,
+html[data-site-theme="2"] header,
+html[data-site-theme="2"] footer,
+html[data-site-theme="2"] main section,
+html[data-site-theme="2"] main > section,
+html[data-site-theme="2"] .home-section,
+html[data-site-theme="2"] .bg-white,
+html[data-site-theme="2"] .bg-cream {
+  background-color: #000000 !important;
+}
+
+html[data-site-theme="2"] .bg-black {
+  background-color: #000000 !important;
+}
+
+html[data-site-theme="2"] body,
+html[data-site-theme="2"] header,
+html[data-site-theme="2"] footer,
+html[data-site-theme="2"] main,
+html[data-site-theme="2"] .text-ink,
+html[data-site-theme="2"] .text-black {
+  color: #ffffff !important;
+}
+
+html[data-site-theme="2"] .text-white {
+  color: #ffffff !important;
+}
+
+html[data-site-theme="2"] .text-muted {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html[data-site-theme="2"] header .text-black,
+html[data-site-theme="2"] header a {
+  color: #ffffff !important;
+}
+
+html[data-site-theme="2"] header a[class*="decoration-black"] {
+  text-decoration-color: #ffffff !important;
+}
+
+html[data-site-theme="2"] header {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-site-theme="2"] footer {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-site-theme="2"] .border-black\/15,
+html[data-site-theme="2"] .border-line,
+html[data-site-theme="2"] .border-ink,
+html[data-site-theme="2"] .border-white\/10,
+html[data-site-theme="2"] .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-site-theme="2"] article.bg-white,
+html[data-site-theme="2"] blockquote.bg-white,
+html[data-site-theme="2"] .bg-white.border {
+  background-color: #111111 !important;
+}
+
+html[data-site-theme="2"] .marque-card::after {
+  background: var(--theme-gold) !important;
+}
+
+html[data-site-theme="2"] .marque-card:hover {
+  border-color: rgba(201, 168, 76, 0.35) !important;
+}
+
+/* ─── Thème 3 — franges alternées crème / noir ─── */
+html[data-site-theme="3"] {
+  --color-accent: var(--theme-gold);
+}
+
+html[data-site-theme="3"] header {
+  background-color: var(--theme-cream) !important;
+  border-color: rgba(26, 26, 26, 0.12) !important;
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] header .text-black,
+html[data-site-theme="3"] header a {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] header a[class*="decoration-black"] {
+  text-decoration-color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] footer {
+  background-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+}
+
+html[data-site-theme="3"] footer .text-white,
+html[data-site-theme="3"] footer .text-white\/75,
+html[data-site-theme="3"] footer a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-site-theme="3"] footer .text-dal {
+  color: var(--theme-gold) !important;
+}
+
+/* Bandes crème (impairs à partir du 3e enfant — le hero reste intact) */
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) {
+  background-color: var(--theme-cream) !important;
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .text-ink,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .text-black,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) h1,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) h2,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) h3 {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .text-white {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .text-muted {
+  color: #6b6b6b !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .bg-white {
+  background-color: #ffffff !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .border-white\/20,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .border-line {
+  border-color: rgba(26, 26, 26, 0.12) !important;
+}
+
+/* Bandes noires (pairs à partir du 2e enfant) */
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .text-ink,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .text-black,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) h1,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) h2,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) h3 {
+  color: #ffffff !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .text-muted {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .bg-white {
+  background-color: #111111 !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .border-white\/20,
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .border-line {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .border-y {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-site-theme="3"] .marque-card::after {
+  background: var(--theme-gold) !important;
+}
+
+/* HomeAbout — colonnes internes suivent la bande */
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(odd) .bg-white {
+  background-color: var(--theme-cream) !important;
+}
+
+html[data-site-theme="3"] main > *:nth-child(n + 2):nth-child(even) .bg-white {
+  background-color: #000000 !important;
+}
+
+/* ─── Thème 4 — crème uniforme, accents marron ─── */
+html[data-site-theme="4"] {
+  --background: var(--theme-cream);
+  --foreground: #1a1a1a;
+  --color-cream: var(--theme-cream);
+  --color-ink: #1a1a1a;
+  --color-muted: #5c5348;
+  --color-accent: var(--theme-brown);
+  --color-line: rgba(26, 26, 26, 0.12);
+}
+
+html[data-site-theme="4"] body,
+html[data-site-theme="4"] header,
+html[data-site-theme="4"] footer,
+html[data-site-theme="4"] main section,
+html[data-site-theme="4"] main > section,
+html[data-site-theme="4"] .home-section,
+html[data-site-theme="4"] .bg-white,
+html[data-site-theme="4"] .bg-cream,
+html[data-site-theme="4"] .bg-black {
+  background-color: var(--theme-cream) !important;
+}
+
+html[data-site-theme="4"] body,
+html[data-site-theme="4"] header,
+html[data-site-theme="4"] footer,
+html[data-site-theme="4"] main,
+html[data-site-theme="4"] .text-ink,
+html[data-site-theme="4"] .text-black {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="4"] .text-white {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="4"] .text-muted {
+  color: #5c5348 !important;
+}
+
+html[data-site-theme="4"] header .text-black,
+html[data-site-theme="4"] header a {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="4"] header a[class*="decoration-black"] {
+  text-decoration-color: #1a1a1a !important;
+}
+
+html[data-site-theme="4"] header,
+html[data-site-theme="4"] footer {
+  border-color: rgba(26, 26, 26, 0.12) !important;
+}
+
+html[data-site-theme="4"] footer .text-white,
+html[data-site-theme="4"] footer .text-white\/75,
+html[data-site-theme="4"] footer a {
+  color: #1a1a1a !important;
+}
+
+html[data-site-theme="4"] footer .text-dal {
+  color: var(--theme-brown) !important;
+}
+
+html[data-site-theme="4"] .border-black\/15,
+html[data-site-theme="4"] .border-line,
+html[data-site-theme="4"] .border-ink,
+html[data-site-theme="4"] .border-white\/10,
+html[data-site-theme="4"] .border-white\/20 {
+  border-color: rgba(26, 26, 26, 0.12) !important;
+}
+
+html[data-site-theme="4"] article.bg-white,
+html[data-site-theme="4"] blockquote.bg-white {
+  background-color: #ffffff !important;
+}
+
+html[data-site-theme="4"] .marque-card::after {
+  background: var(--theme-brown) !important;
+}
+
+html[data-site-theme="4"] .marque-card:hover {
+  border-color: rgba(139, 105, 20, 0.35) !important;
+}
+
+/* Hero — conserve son rendu visuel sur thèmes 3 et 4 */
+html[data-site-theme="3"] main > *:first-child,
+html[data-site-theme="4"] main > *:first-child {
+  background-color: transparent !important;
+}
+
+html[data-site-theme="3"] main > *:first-child .text-white,
+html[data-site-theme="4"] main > *:first-child .text-white {
+  color: #ffffff !important;
+}
+
+/* Accents communs thèmes 2 et 3 */
+html[data-site-theme="2"] .text-dal,
+html[data-site-theme="3"] .text-dal {
+  color: var(--theme-gold) !important;
+}
+
+html[data-site-theme="2"] .bg-dal,
+html[data-site-theme="3"] .bg-dal {
+  background-color: var(--theme-gold) !important;
+  color: #000000 !important;
+}
+
+html[data-site-theme="2"] .hover\:bg-dal\/90:hover,
+html[data-site-theme="3"] .hover\:bg-dal\/90:hover {
+  background-color: color-mix(in srgb, var(--theme-gold) 90%, #000000) !important;
+}
+
+html[data-site-theme="2"] .hover\:text-dal:hover,
+html[data-site-theme="3"] .hover\:text-dal:hover {
+  color: var(--theme-gold) !important;
+}
+
+html[data-site-theme="4"] .text-dal {
+  color: var(--theme-brown) !important;
+}
+
+html[data-site-theme="4"] .bg-dal {
+  background-color: var(--theme-brown) !important;
+  color: #ffffff !important;
+}
+
+html[data-site-theme="4"] .hover\:bg-dal\/90:hover {
+  background-color: color-mix(in srgb, var(--theme-brown) 90%, #000000) !important;
+}
+
+html[data-site-theme="4"] .hover\:text-dal:hover {
+  color: var(--theme-brown) !important;
+}

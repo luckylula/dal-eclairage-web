@@ -5,6 +5,25 @@
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a;
+  --font-heading: var(--font-cormorant), Georgia, serif;
+
+  /* Thème 1 — valeurs actuelles */
+  --color-cream: #faf8f5;
+  --color-ink: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-accent: #cc2229;
+  --color-line: #e8e8e8;
+  --theme-cream: #f5f0e8;
+  --theme-gold: #c9a84c;
+  --theme-brown: #8b6914;
+}
+
+html[data-heading-font="2"] {
+  --font-heading: var(--font-prata), Georgia, serif;
+}
+
+html[data-heading-font="3"] {
+  --font-heading: var(--font-josefin), system-ui, sans-serif;
 }
 
 html {
@@ -14,6 +33,27 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading) !important;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+html[data-heading-font="2"] h1,
+html[data-heading-font="2"] h2,
+html[data-heading-font="2"] h3 {
+  letter-spacing: 0.015em;
+}
+
+html[data-heading-font="3"] h1,
+html[data-heading-font="3"] h2,
+html[data-heading-font="3"] h3 {
+  font-weight: 300;
+  letter-spacing: 0.06em;
 }
 
 @layer utilities {
