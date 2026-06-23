@@ -1,6 +1,5 @@
-import Image from "next/image";
 import {
-  logoFooterSrc,
+  logoFooterVideoSrc,
   logoHeaderVideoHeight,
   logoHeaderVideoSrc,
   logoHeaderVideoWidth,
@@ -9,41 +8,27 @@ import { siteName } from "@/lib/site";
 
 type Props = {
   variant?: "header" | "footer";
-  priority?: boolean;
   className?: string;
 };
 
-const footerSizeClass = "h-[6.25rem] w-auto sm:h-[7rem] md:h-[8rem]";
-
-const headerVideoClass =
+const logoVideoClass =
   "logo-header-video block h-[7.75rem] w-auto max-w-[min(24rem,65vw)] object-contain object-left sm:h-[8.5rem] md:h-[9.25rem]";
 
-export function SiteLogo({ variant = "header", priority = false, className = "" }: Props) {
-  if (variant === "header") {
-    return (
-      <video
-        src={logoHeaderVideoSrc}
-        width={logoHeaderVideoWidth}
-        height={logoHeaderVideoHeight}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-label={siteName}
-        className={`${headerVideoClass} ${className}`}
-      />
-    );
-  }
+export function SiteLogo({ variant = "header", className = "" }: Props) {
+  const src = variant === "header" ? logoHeaderVideoSrc : logoFooterVideoSrc;
 
   return (
-    <Image
-      src={logoFooterSrc}
-      alt={siteName}
-      width={400}
-      height={130}
-      priority={priority}
-      className={`object-contain object-left ${footerSizeClass}`}
+    <video
+      src={src}
+      width={logoHeaderVideoWidth}
+      height={logoHeaderVideoHeight}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      aria-label={siteName}
+      className={`${logoVideoClass} ${className}`}
     />
   );
 }

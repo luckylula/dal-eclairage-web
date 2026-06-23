@@ -9,7 +9,7 @@ export type Membre = {
 export const equipe: Membre[] = [
   {
     nom: "Hubert Darnet",
-    bio: "Passionné par l'éclairage depuis plus de 17 ans, Hubert a bâti une expertise solide au fil d'un parcours riche et concret. Aujourd'hui à la tête de DAL ECLAIRAGE HITECH SARL, il met cette expérience au service des installateurs électriciens, architectes et bureaux d'études, ou même technicien sur site, en proposant bien plus que de la vente",
+    bio: "Passionné par l'éclairage depuis plus de 17 ans, j'ai bâti une expertise solide au fil d'un parcours riche et concret. Aujourd'hui à la tête de DAL ECLAIRAGE HITECH SARL, je mets cette expérience au service des installateurs électriciens, architectes et bureaux d'études, ou même technicien sur site, en proposant bien plus que de la vente",
     seed: "dal-team-hubert-darnet",
   },
   {

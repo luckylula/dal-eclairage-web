@@ -36,7 +36,7 @@ export function Header() {
           className="group flex shrink-0 items-center leading-none"
           onClick={() => setOpen(false)}
         >
-          <SiteLogo variant="header" priority className="transition-opacity group-hover:opacity-90" />
+          <SiteLogo variant="header" className="transition-opacity group-hover:opacity-90" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex lg:gap-7 xl:gap-9 2xl:gap-10" aria-label="Principale">
