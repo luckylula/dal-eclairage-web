@@ -26,18 +26,12 @@ export default function RealisationsPage() {
               Projets
             </p>
             <h1 className="mt-3 font-serif text-4xl text-white sm:text-5xl md:text-6xl">Réalisations</h1>
-            <p className="mt-4 max-w-xl font-sans text-lg text-white/90">
-              [Sous-titre — placeholder. Sélection de chantiers techniques, décoratifs, extérieurs et
-              événementiels.]
-            </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-cream py-20 lg:py-28">
-        <div className="mx-auto max-w-content px-6 lg:px-10">
-          <RealisationFilterClient />
-        </div>
+      <section className="bg-cream pb-20 pt-20 lg:pb-28 lg:pt-28">
+        <RealisationFilterClient />
       </section>
     </>
   );

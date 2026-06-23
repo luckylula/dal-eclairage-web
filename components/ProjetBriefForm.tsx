@@ -2,9 +2,9 @@
 
 import { useState, type FormEvent } from "react";
 
-const inputClass =
-  "mt-1 w-full border border-line bg-white px-4 py-3 font-sans text-sm text-ink outline-none transition focus:border-dal";
-const labelClass = "block font-sans text-xs font-semibold uppercase tracking-widest text-muted";
+const labelClass = "block font-sans text-sm text-ink";
+const fieldClass =
+  "projet-form-field mt-2 w-full border-0 border-b-2 border-black bg-transparent px-0 py-2.5 font-sans text-sm text-ink shadow-none outline-none ring-0 transition placeholder:text-muted/60 focus:border-black focus:outline-none focus:ring-0";
 
 export function ProjetBriefForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "err">("idle");
@@ -22,6 +22,7 @@ export function ProjetBriefForm() {
       email: String(fd.get("email") ?? "").trim(),
       telephone: String(fd.get("telephone") ?? "").trim() || null,
       entreprise: String(fd.get("entreprise") ?? "").trim() || null,
+      description: String(fd.get("message") ?? "").trim() || null,
     };
 
     try {
@@ -46,38 +47,63 @@ export function ProjetBriefForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-6 sm:grid-cols-2">
-      <div>
-        <label className={labelClass} htmlFor="nom">
-          Nom <span className="text-dal">*</span>
-        </label>
-        <input id="nom" name="nom" required className={inputClass} autoComplete="family-name" />
-      </div>
+    <form onSubmit={onSubmit} className="flex flex-col gap-8">
       <div>
         <label className={labelClass} htmlFor="prenom">
           Prénom <span className="text-dal">*</span>
         </label>
-        <input id="prenom" name="prenom" required className={inputClass} autoComplete="given-name" />
+        <input
+          id="prenom"
+          name="prenom"
+          required
+          className={fieldClass}
+          autoComplete="given-name"
+        />
       </div>
-      <div className="sm:col-span-2">
+      <div>
+        <label className={labelClass} htmlFor="nom">
+          Nom <span className="text-dal">*</span>
+        </label>
+        <input id="nom" name="nom" required className={fieldClass} autoComplete="family-name" />
+      </div>
+      <div>
         <label className={labelClass} htmlFor="entreprise">
           Entreprise
         </label>
-        <input id="entreprise" name="entreprise" className={inputClass} autoComplete="organization" />
+        <input id="entreprise" name="entreprise" className={fieldClass} autoComplete="organization" />
       </div>
       <div>
         <label className={labelClass} htmlFor="email">
-          Mail <span className="text-dal">*</span>
+          Email <span className="text-dal">*</span>
         </label>
-        <input id="email" name="email" type="email" required className={inputClass} autoComplete="email" />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          className={fieldClass}
+          autoComplete="email"
+        />
       </div>
       <div>
         <label className={labelClass} htmlFor="telephone">
           Téléphone
         </label>
-        <input id="telephone" name="telephone" type="tel" className={inputClass} autoComplete="tel" />
+        <input id="telephone" name="telephone" type="tel" className={fieldClass} autoComplete="tel" />
       </div>
-      <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <label className={labelClass} htmlFor="message">
+          Message <span className="text-dal">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={3}
+          className={`${fieldClass} min-h-[5.5rem] resize-none`}
+        />
+      </div>
+      <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
           disabled={status === "loading"}
@@ -86,11 +112,7 @@ export function ProjetBriefForm() {
           {status === "loading" ? "Envoi…" : "Envoyer"}
         </button>
         {message ? (
-          <p
-            className={`font-sans text-sm ${
-              status === "ok" ? "text-muted" : "text-dal"
-            }`}
-          >
+          <p className={`font-sans text-sm ${status === "ok" ? "text-muted" : "text-dal"}`}>
             {message}
           </p>
         ) : null}

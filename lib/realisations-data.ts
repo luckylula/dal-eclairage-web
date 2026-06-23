@@ -15,23 +15,26 @@ export type Realisation = {
 export const realisations: Realisation[] = [
   {
     id: "r1",
-    titre: "[Projet bureau — placeholder]",
+    titre: "Dressing sur mesure — éclairage intégré",
     type: "Technique",
-    description: "[Ligne claire, confort visuel et efficacité énergétique — placeholder]",
+    description:
+      "Bandeaux LED dans les étagères et îlots en pierre rétroéclairés : confort visuel, rendu haut de gamme et maîtrise technique.",
     seed: "dal-real-1",
   },
   {
     id: "r2",
-    titre: "[Hôtel boutique — placeholder]",
+    titre: "MO Bar — Genève",
     type: "Décoratif",
-    description: "[Ambiance chaleureuse et scénographie lumineuse — placeholder]",
+    description:
+      "Scénographie lumineuse et ambiance chaleureuse pour un bar au cœur de Genève.",
     seed: "dal-real-2",
   },
   {
     id: "r3",
-    titre: "[Façade institutionnelle — placeholder]",
-    type: "Extérieur",
-    description: "[Mise en valeur nocturne maîtrisée — placeholder]",
+    titre: "Espace intérieur — mise en lumière",
+    type: "Décoratif",
+    description:
+      "Éclairage d'ambiance et accentuation des matières dans un projet résidentiel ou hôtelier.",
     seed: "dal-real-3",
   },
   {
@@ -54,5 +57,12 @@ export const realisations: Realisation[] = [
     type: "Technique",
     description: "[IRC élevé et modularité des spots — placeholder]",
     seed: "dal-real-6",
+  },
+  {
+    id: "r7",
+    titre: "[Réalisation — placeholder]",
+    type: "Décoratif",
+    description: "[Projet d'éclairage — placeholder]",
+    seed: "dal-real-7",
   },
 ];

@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { ProjetBriefForm } from "@/components/ProjetBriefForm";
+import { ProjetRealisationsGrid } from "@/components/ProjetRealisationsGrid";
 import { SectionHeading } from "@/components/SectionHeading";
+import { TaglineMarquee } from "@/components/TaglineMarquee";
 import { realisations } from "@/lib/realisations-data";
 import { votreProjetHeroVideoSrc } from "@/lib/votre-projet-media";
 
@@ -49,7 +49,7 @@ export default function VotreProjetPage() {
             title="Parlez-nous de votre espace"
             lead="Les champs marqués * sont obligatoires."
           />
-          <div className="mt-12 max-w-3xl border border-line bg-white p-6 sm:p-10">
+          <div className="mt-12 max-w-xl">
             <ProjetBriefForm />
           </div>
         </div>
@@ -62,23 +62,14 @@ export default function VotreProjetPage() {
             eyebrow="Inspiration"
             title="Réalisations qui posent le ton"
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {mini.map((r) => (
-              <Link key={r.id} href="/realisations" className="group block border border-line bg-white">
-                <PlaceholderImage seed={r.seed} alt={`[${r.titre}]`} aspectClassName="aspect-square" />
-                <div className="p-4">
-                  <p className="font-sans text-[10px] font-semibold uppercase tracking-widest text-dal">
-                    {r.type}
-                  </p>
-                  <p className="mt-1 font-serif text-lg text-ink group-hover:text-dal transition-colors">
-                    {r.titre}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ProjetRealisationsGrid items={mini} />
         </div>
       </section>
+
+      <TaglineMarquee
+        repeatsPerBlock={3}
+        text="Que vous soyez architecte, décorateur ou installateur, nous vous accompagnons de l'étude jusqu'à la réalisation."
+      />
     </>
   );
 }

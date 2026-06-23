@@ -1,0 +1,16 @@
+Photos des réalisations
+========================
+
+Dossier : public/images/realisations/
+
+Accueil — 3 dernières réalisations (lib/realisations-images.ts) :
+
+  r1 → 01/ce014bed-9610-495c-bb3d-67295fa1ac22.jpg
+  r2 → 02/geneva-mo-bar-2024-low.jpg
+  r3 → 03/RIT_1028-EDIT-low.jpg
+
+Pour r4, r5, r6 : déposez dans 04/, 05/, 06/ et ajoutez la ligne dans realisations-images.ts.
+
+Titres et textes : lib/realisations-data.ts
+
+Après ajout : Ctrl+F5 sur le site.

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { HomeAboutSection } from "@/components/HomeAboutSection";
 import { HomeHeroCarousel } from "@/components/HomeHeroCarousel";
+import { HomeRealisationsStaircase } from "@/components/HomeRealisationsStaircase";
 import { HomeTeamSection } from "@/components/HomeTeamSection";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { heroCarouselSlides } from "@/lib/hero-carousel";
@@ -32,42 +32,7 @@ export default function HomePage() {
 
       <HomeTeamSection />
 
-      <section className="home-section bg-black text-white">
-        <div className="home-section-inner">
-          <Reveal direction="left">
-            <SectionHeading
-              variant="inverted"
-              eyebrow="Réalisations"
-              title="Dernières réalisations"
-              lead="[Phrase d’accroche — placeholder. Aperçu de projets récents : bureaux, retail, hôtellerie et extérieurs.]"
-            />
-          </Reveal>
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {dernieres.map((r, i) => (
-              <Reveal key={r.id} direction="up" delay={i * 140}>
-                <article className="flex h-full flex-col border border-white/20 bg-white">
-                  <PlaceholderImage seed={r.seed} alt={`[${r.titre}]`} aspectClassName="aspect-[5/4]" />
-                  <div className="flex flex-1 flex-col p-6">
-                    <p className="font-sans text-xs font-semibold uppercase tracking-widest text-dal">
-                      {r.type}
-                    </p>
-                    <h3 className="mt-2 font-serif text-2xl text-ink">{r.titre}</h3>
-                    <p className="mt-3 flex-1 font-sans text-sm leading-relaxed text-muted">
-                      {r.description}
-                    </p>
-                    <Link
-                      href="/realisations"
-                      className="mt-6 inline-flex font-sans text-sm text-ink underline-offset-4 hover:text-dal hover:underline"
-                    >
-                      Voir les réalisations
-                    </Link>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeRealisationsStaircase items={dernieres} />
 
       <HomeAboutSection />
 
