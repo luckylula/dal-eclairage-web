@@ -49,7 +49,7 @@ export default function VotreProjetPage() {
             title="Parlez-nous de votre espace"
             lead="Les champs marqués * sont obligatoires."
           />
-          <div className="mt-12 max-w-xl">
+          <div className="mt-12 max-w-2xl">
             <ProjetBriefForm />
           </div>
         </div>

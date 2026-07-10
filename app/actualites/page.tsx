@@ -1,7 +1,9 @@
 import type { Post } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { siteFeatures } from "@/lib/site-features";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +18,10 @@ function excerpt(text: string, max = 180) {
 }
 
 export default async function ActualitesPage() {
+  if (!siteFeatures.actualites) {
+    redirect("/");
+  }
+
   let posts: Post[] = [];
   let erreurDb = false;
 

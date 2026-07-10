@@ -330,11 +330,33 @@ html[data-heading-font="3"] footer {
 
 @layer components {
   .projet-form-field {
-    border-bottom: 2px solid #000 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .projet-form-field:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.32) !important;
   }
 
   .projet-form-field:focus {
-    border-bottom-color: #000 !important;
+    border-bottom-color: var(--theme-gold) !important;
+  }
+
+  .projet-form-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .projet-form-checkbox:checked {
+    border-color: var(--theme-gold) !important;
+    background-color: var(--theme-gold) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.2 4.8 8.5 9.5 3.8' stroke='%23000' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+  }
+
+  .projet-form-submit:hover {
+    color: #000000 !important;
   }
 
   .marque-visual-bg {

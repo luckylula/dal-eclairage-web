@@ -60,10 +60,11 @@ export default function SocietePage() {
             DAL Éclairage Hitech
           </p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl text-balance text-white sm:text-5xl md:text-6xl">
-            La Société
+            La Société{" "}
+            <span className="text-dal">Genevoise</span>
           </h1>
           <p className="mt-6 max-w-2xl font-sans text-lg text-white/90">
-            Expertise de lumière au service des professionnel
+            Expertise de la lumière au service des professionnels
           </p>
         </div>
       </section>
