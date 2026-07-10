@@ -11,24 +11,24 @@ export const headingFontOptions: {
 }[] = [
   {
     id: "1",
-    label: "Typographie 1 — Cormorant Garamond",
-    previewFamily: "var(--font-cormorant), Georgia, serif",
-    previewWeight: 400,
-    previewLetterSpacing: "0.025em",
+    label: "Typographie 1 — Rê Majeur",
+    previewFamily: "var(--font-montserrat), system-ui, sans-serif",
+    previewWeight: 600,
+    previewLetterSpacing: "0.01em",
   },
   {
     id: "2",
-    label: "Typographie 2 — Prata",
-    previewFamily: "var(--font-prata), Georgia, serif",
+    label: "Typographie 2 — Juana",
+    previewFamily: "var(--font-playfair), Georgia, serif",
     previewWeight: 400,
-    previewLetterSpacing: "0.015em",
+    previewLetterSpacing: "0.02em",
   },
   {
     id: "3",
-    label: "Typographie 3 — Josefin Sans",
-    previewFamily: "var(--font-josefin), system-ui, sans-serif",
-    previewWeight: 300,
-    previewLetterSpacing: "0.06em",
+    label: "Typographie 3 — Porta Romana",
+    previewFamily: "var(--font-jost), system-ui, sans-serif",
+    previewWeight: 700,
+    previewLetterSpacing: "-0.015em",
   },
 ];
 
@@ -37,5 +37,9 @@ export function isHeadingFontOption(value: string | null): value is HeadingFontO
 }
 
 export function applyHeadingFont(option: HeadingFontOption) {
-  document.documentElement.dataset.headingFont = option;
+  if (option === "1") {
+    delete document.documentElement.dataset.headingFont;
+  } else {
+    document.documentElement.dataset.headingFont = option;
+  }
 }

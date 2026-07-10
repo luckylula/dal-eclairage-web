@@ -33,6 +33,8 @@ export function MarqueCard({ marque, image }: CardProps) {
           fit={image.fit}
           tone={image.tone}
           aspectClassName="aspect-[16/10]"
+          paddingClassName={marque.imagePadding}
+          imageScale={marque.imageScale}
           zoomOnHover
         />
       </div>

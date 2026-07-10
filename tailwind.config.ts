@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -16,8 +17,8 @@ const config: Config = {
         line: "var(--color-line)",
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-heading)", "Georgia", "serif"],
+        sans: ["var(--font-body)", "var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "72rem",

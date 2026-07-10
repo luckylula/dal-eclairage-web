@@ -5,7 +5,8 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --font-heading: var(--font-cormorant), Georgia, serif;
+  --font-heading: var(--font-montserrat), system-ui, sans-serif;
+  --font-body: var(--font-montserrat), system-ui, sans-serif;
 
   --color-cream: #000000;
   --color-ink: #ffffff;
@@ -18,11 +19,13 @@
 }
 
 html[data-heading-font="2"] {
-  --font-heading: var(--font-prata), Georgia, serif;
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-playfair), Georgia, serif;
 }
 
 html[data-heading-font="3"] {
-  --font-heading: var(--font-josefin), system-ui, sans-serif;
+  --font-heading: var(--font-jost), system-ui, sans-serif;
+  --font-body: var(--font-jost), system-ui, sans-serif;
 }
 
 html {
@@ -32,6 +35,20 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-body), var(--font-dm-sans), system-ui, sans-serif;
+}
+
+header,
+footer {
+  font-family: var(--font-body), var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-body), var(--font-dm-sans), system-ui, sans-serif !important;
+}
+
+.font-serif {
+  font-family: var(--font-heading), Georgia, serif !important;
 }
 
 body,
@@ -123,21 +140,37 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading) !important;
-  font-weight: 400;
-  letter-spacing: 0.025em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 html[data-heading-font="2"] h1,
 html[data-heading-font="2"] h2,
 html[data-heading-font="2"] h3 {
-  letter-spacing: 0.015em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+html[data-heading-font="2"] body,
+html[data-heading-font="2"] header,
+html[data-heading-font="2"] footer {
+  font-weight: 400;
 }
 
 html[data-heading-font="3"] h1,
 html[data-heading-font="3"] h2,
 html[data-heading-font="3"] h3 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+html[data-heading-font="3"] body {
   font-weight: 300;
-  letter-spacing: 0.06em;
+}
+
+html[data-heading-font="3"] header,
+html[data-heading-font="3"] footer {
+  font-weight: 300;
 }
 
 @layer utilities {
@@ -304,12 +337,8 @@ html[data-heading-font="3"] h3 {
     border-bottom-color: #000 !important;
   }
 
-  .marque-visual-bg-light {
-    background-color: #f5f0e8;
-  }
-
-  .marque-visual-bg-dark {
-    background-color: #1a1a1a;
+  .marque-visual-bg {
+    background-color: #ffffff !important;
   }
 
   .marque-card {

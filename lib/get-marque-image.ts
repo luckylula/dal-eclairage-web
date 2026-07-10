@@ -10,6 +10,7 @@ const CUSTOM_ALIASES: Record<string, string[]> = {
   "opple-lighting": ["opple"],
   "kraken-lighting": ["kraken"],
   "nte-sistemas": ["nte"],
+  "pixlum": ["pixluna"],
 };
 
 export type MarqueImage = {
@@ -69,7 +70,7 @@ export function resolveMarqueImage(marque: Marque): MarqueImage {
     return {
       src: customSrc,
       isCustom: true,
-      fit: "cover",
+      fit: marque.imageFit ?? "logo",
       tone: marque.imageTone,
     };
   }
@@ -77,7 +78,7 @@ export function resolveMarqueImage(marque: Marque): MarqueImage {
   return {
     src: marque.imageSrc,
     isCustom: false,
-    fit: marque.imageFit,
+    fit: marque.imageFit ?? "logo",
     tone: marque.imageTone,
   };
 }

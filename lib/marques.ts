@@ -8,26 +8,22 @@ export type Marque = {
   imageSrc: string;
   imageFit?: "logo" | "cover";
   imageTone?: "light" | "dark";
+  /** Marge intérieure Tailwind autour du logo (ex. `px-8 py-4`). */
+  imagePadding?: string;
+  /** Facteur d'échelle du logo (1 = taille par défaut). */
+  imageScale?: number;
 };
 
 export const marques: Marque[] = [
   {
-    slug: "nova-luce",
-    nom: "Nova Luce",
+    slug: "stilnovo",
+    nom: "Stilnovo",
     description:
-      "Éclairage décoratif, technique et extérieur — design contemporain et solutions LED pour l’architecture.",
-    siteFabricant: "https://novaluce.com/",
-    lienCatalogue: "https://novaluce.com/Kataloge",
-    imageSrc: "/images/marques/nova-luce.png",
-  },
-  {
-    slug: "led-line",
-    nom: "LED LINE",
-    description:
-      "Fabricant polonais de solutions LED : luminaires, rubans, profils et éclairage architectural et industriel.",
-    siteFabricant: "https://ledline.pl/en/",
-    lienCatalogue: "https://ledline.pl/en/downloads/",
-    imageSrc: "/images/marques/led-line.png",
+      "Design italien depuis 1946 — collections iconiques et luminaires LED contemporains.",
+    siteFabricant: "https://www.stilnovo.com/en/",
+    lienCatalogue: "https://www.stilnovo.com/en/download/",
+    imageSrc: "/images/marques/stilnovo.svg",
+    imagePadding: "px-8 py-5 sm:px-10 sm:py-6",
   },
   {
     slug: "lluria",
@@ -39,15 +35,6 @@ export const marques: Marque[] = [
     imageSrc: "/images/marques/lluria.png",
   },
   {
-    slug: "luxiona",
-    nom: "Luxiona",
-    description:
-      "Éclairage technique professionnel pour l’architecture, l’industrie, le tertiaire et les environnements exigeants.",
-    siteFabricant: "https://luxiona.com/",
-    lienCatalogue: "https://luxiona.com/downloads",
-    imageSrc: "/images/marques/luxiona.svg",
-  },
-  {
     slug: "linealight",
     nom: "Linealight",
     description:
@@ -55,35 +42,6 @@ export const marques: Marque[] = [
     siteFabricant: "https://www.linealight.com/en",
     lienCatalogue: "https://www.linealight.com/en/catalogues",
     imageSrc: "/images/marques/linealight.jpg",
-    imageFit: "cover",
-  },
-  {
-    slug: "opple-lighting",
-    nom: "Opple Lighting",
-    description:
-      "Solutions d’éclairage LED pour le résidentiel, le tertiaire et les espaces professionnels.",
-    siteFabricant: "https://www.opple.eu/en",
-    lienCatalogue: "https://www.opple.eu/en/catalogue-en",
-    imageSrc: "/images/marques/opple-lighting.png",
-    imageFit: "cover",
-  },
-  {
-    slug: "siteco",
-    nom: "Siteco",
-    description:
-      "Éclairage intérieur et extérieur, gestion de la lumière et solutions complètes Made in Germany.",
-    siteFabricant: "https://www.siteco.com/",
-    lienCatalogue: "https://www.siteco.com/products",
-    imageSrc: "/images/marques/siteco.svg",
-  },
-  {
-    slug: "kraken-lighting",
-    nom: "Kraken Lighting",
-    description:
-      "Éclairage professionnel en bois massif, conçu et fabriqué en France.",
-    siteFabricant: "https://kraken-lighting.fr/",
-    lienCatalogue: "https://kraken-lighting.fr/category/telechargements/",
-    imageSrc: "/images/marques/kraken-lighting.svg",
   },
   {
     slug: "estiluz",
@@ -93,35 +51,48 @@ export const marques: Marque[] = [
     siteFabricant: "https://www.estiluz.com/en",
     lienCatalogue: "https://www.estiluz.com/en/downloads",
     imageSrc: "/images/marques/estiluz.png",
+    imagePadding: "px-8 py-5 sm:px-10 sm:py-6",
   },
   {
-    slug: "stilnovo",
-    nom: "Stilnovo",
+    slug: "pixlum",
+    nom: "Pixlum",
     description:
-      "Design italien depuis 1946 — collections iconiques et luminaires LED contemporains.",
-    siteFabricant: "https://www.stilnovo.com/en/",
-    lienCatalogue: "https://www.stilnovo.com/en/download/",
-    imageSrc: "/images/marques/stilnovo.jpg",
-    imageFit: "cover",
+      "Système modulaire breveté de panneaux conducteurs et LED — décoration lumineuse repositionnable, ciels étoilés et design d’intérieur.",
+    siteFabricant: "https://www.pixlum.fr/",
+    lienCatalogue: "https://www.pixlum.fr/media/catalogue-pixlum-v1-079535800-1819-04122018.pdf",
+    imageSrc: "/images/marques/pixlum.svg",
+    imagePadding: "px-8 py-5 sm:px-10 sm:py-6",
   },
   {
-    slug: "vistosi",
-    nom: "Vistosi",
+    slug: "kraken-lighting",
+    nom: "Kraken Lighting",
     description:
-      "Verrerie vénitienne et luminaires en verre soufflé de Murano — tradition et design.",
-    siteFabricant: "https://vistosi.it/?lang=en",
-    lienCatalogue: "https://vistosi.it/download/?lang=en",
-    imageSrc: "/images/marques/vistosi.svg",
+      "Éclairage professionnel en bois massif, conçu et fabriqué en France.",
+    siteFabricant: "https://kraken-lighting.fr/",
+    lienCatalogue: "https://kraken-lighting.fr/category/telechargements/",
+    imageSrc: "/images/marques/kraken-lighting.svg",
+    imagePadding: "px-5 py-3 sm:px-6 sm:py-4",
+    imageScale: 0.9,
   },
   {
-    slug: "daylight",
-    nom: "Daylight",
+    slug: "luxiona",
+    nom: "Luxiona",
     description:
-      "Éclairage LED haute fidélité des couleurs pour le travail de précision, l’artisanat et les métiers d’art.",
-    siteFabricant: "https://daylightcompany.com/eu/fr/",
-    lienCatalogue: "https://daylightcompany.com/eu/fr/sewing-and-crafts/",
-    imageSrc: "/images/marques/daylight.svg",
-    imageTone: "dark",
+      "Éclairage technique professionnel pour l’architecture, l’industrie, le tertiaire et les environnements exigeants.",
+    siteFabricant: "https://luxiona.com/",
+    lienCatalogue: "https://luxiona.com/downloads",
+    imageSrc: "/images/marques/luxiona.svg",
+    imagePadding: "px-8 py-5 sm:px-10 sm:py-6",
+  },
+  {
+    slug: "opple-lighting",
+    nom: "Opple Lighting",
+    description:
+      "Solutions d’éclairage LED pour le résidentiel, le tertiaire et les espaces professionnels.",
+    siteFabricant: "https://www.opple.eu/en",
+    lienCatalogue: "https://www.opple.eu/en/catalogue-en",
+    imageSrc: "/images/marques/opple-lighting.svg",
+    imageScale: 1.85,
   },
   {
     slug: "goccia",
@@ -130,7 +101,48 @@ export const marques: Marque[] = [
       "Éclairage extérieur architectural et urbain — solutions LED pour espaces publics et paysagers.",
     siteFabricant: "https://www.goccia.it/en/",
     lienCatalogue: "https://www.goccia.it/it/download",
-    imageSrc: "https://www.goccia.it/corporate153/images/5967/goccia_g_logo_header.png",
+    imageSrc: "/images/marques/goccia.png",
+    imagePadding: "px-6 py-4 sm:px-8 sm:py-5",
+  },
+  {
+    slug: "led-line",
+    nom: "LED LINE",
+    description:
+      "Fabricant polonais de solutions LED : luminaires, rubans, profils et éclairage architectural et industriel.",
+    siteFabricant: "https://ledline.pl/en/",
+    lienCatalogue: "https://ledline.pl/en/downloads/",
+    imageSrc: "/images/marques/led-line.png",
+    imageScale: 1.65,
+  },
+  {
+    slug: "daylight",
+    nom: "Daylight",
+    description:
+      "Éclairage LED haute fidélité des couleurs pour le travail de précision, l’artisanat et les métiers d’art.",
+    siteFabricant: "https://daylightitalia.com/fr/",
+    lienCatalogue: "https://daylightitalia.com/fr/catalogue-general/",
+    imageSrc: "/images/marques/daylight.png",
+    imagePadding: "px-5 py-3 sm:px-6 sm:py-4",
+  },
+  {
+    slug: "nova-luce",
+    nom: "Nova Luce",
+    description:
+      "Éclairage décoratif, technique et extérieur — design contemporain et solutions LED pour l’architecture.",
+    siteFabricant: "https://novaluce.com/",
+    lienCatalogue: "https://novaluce.com/Kataloge",
+    imageSrc: "/images/marques/nova-luce.png",
+    imagePadding: "px-5 py-3 sm:px-6 sm:py-4",
+  },
+  {
+    slug: "siteco",
+    nom: "Siteco",
+    description:
+      "Éclairage intérieur et extérieur, gestion de la lumière et solutions complètes Made in Germany.",
+    siteFabricant: "https://www.siteco.com/",
+    lienCatalogue: "https://www.siteco.com/products",
+    imageSrc: "/images/marques/siteco.svg",
+    imagePadding: "px-5 py-3 sm:px-6 sm:py-4",
   },
   {
     slug: "nte-sistemas",
@@ -140,6 +152,7 @@ export const marques: Marque[] = [
     siteFabricant: "https://www.ntesistemas.es/en/",
     lienCatalogue: "https://www.ntesistemas.es/en/catalogue/",
     imageSrc: "/images/marques/nte-sistemas.png",
-    imageFit: "cover",
+    imagePadding: "px-8 py-5 sm:px-10 sm:py-6",
+    imageScale: 0.76,
   },
 ];
