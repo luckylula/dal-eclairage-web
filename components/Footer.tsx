@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-black text-white">
       <div className="mx-auto grid max-w-content gap-12 px-6 py-16 lg:grid-cols-[1.1fr_1fr_1fr] lg:gap-10 lg:px-10">
         <div>
-          <SiteLogo variant="footer" />
+          <SiteLogo />
           <p className="sr-only">{siteName}</p>
           <p className="mt-6 font-sans text-base leading-relaxed text-white/75">{siteTagline}</p>
         </div>

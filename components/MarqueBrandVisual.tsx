@@ -21,7 +21,7 @@ export function MarqueBrandVisual({
 }: Props) {
   const isRemote = imageSrc.startsWith("http");
   const isSvg = imageSrc.endsWith(".svg");
-  const bgClass = tone === "dark" ? "bg-ink" : "bg-cream/60";
+  const bgClass = tone === "dark" ? "marque-visual-bg-dark" : "marque-visual-bg-light";
   const fitClass =
     fit === "cover" ? "object-cover" : "object-contain p-8 sm:p-10";
   const zoomClass = zoomOnHover

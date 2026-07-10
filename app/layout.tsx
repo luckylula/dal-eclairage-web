@@ -5,7 +5,6 @@ import { Header } from "@/components/Header";
 import { SelectorDock } from "@/components/SelectorDock";
 import { siteName } from "@/lib/site";
 import "./globals.css";
-import "./themes.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -54,13 +53,13 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("dal-site-theme");if(t==="2"||t==="3"||t==="4")document.documentElement.dataset.siteTheme=t;var h=localStorage.getItem("dal-heading-font");if(h==="2"||h==="3")document.documentElement.dataset.headingFont=h;}catch(e){}})();`,
+            __html: `(function(){try{var h=localStorage.getItem("dal-heading-font");if(h==="2"||h==="3")document.documentElement.dataset.headingFont=h;}catch(e){}})();`,
           }}
         />
       </head>
-      <body className="min-h-screen bg-white font-sans text-ink antialiased">
+      <body className="min-h-screen bg-black font-sans text-white antialiased">
         <Header />
-        <main className="pt-[168px] sm:pt-[188px] md:pt-[208px]">{children}</main>
+        <main className="pt-[8.5rem] sm:pt-[9rem] lg:pt-[10.5rem]">{children}</main>
         <Footer />
         <SelectorDock />
       </body>

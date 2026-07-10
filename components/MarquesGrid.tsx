@@ -50,7 +50,7 @@ export function MarqueCard({ marque, image }: CardProps) {
             href={marque.siteFabricant}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn inline-flex items-center gap-2 bg-ink px-5 py-2.5 font-sans text-sm font-medium text-white shadow-sm transition hover:bg-ink/90 hover:shadow-md"
+            className="group/btn inline-flex items-center gap-2 bg-white px-5 py-2.5 font-sans text-sm font-medium text-black shadow-sm transition hover:bg-white/90 hover:shadow-md"
           >
             Site web
             <ExternalLinkIcon />

@@ -13,10 +13,10 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`font-sans text-lg tracking-wide text-black transition-colors lg:text-xl xl:text-[1.35rem] xl:tracking-[0.02em] ${
+      className={`whitespace-nowrap font-sans text-[0.75rem] tracking-[0.08em] transition-colors sm:text-[0.8125rem] lg:text-sm ${
         active
-          ? "font-semibold underline decoration-2 decoration-black underline-offset-[0.18em]"
-          : "font-medium hover:opacity-80"
+          ? "font-medium text-white underline decoration-1 decoration-white/70 underline-offset-[0.35em]"
+          : "font-normal text-white/80 hover:text-white"
       }`}
     >
       {label}
@@ -29,40 +29,43 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-black/15 bg-white">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-6 py-5 sm:py-6 lg:gap-10 lg:px-10">
-        <Link
-          href="/"
-          className="group flex shrink-0 items-center leading-none"
-          onClick={() => setOpen(false)}
-        >
-          <SiteLogo variant="header" className="transition-opacity group-hover:opacity-90" />
-        </Link>
-
-        <nav className="hidden items-center gap-6 lg:flex lg:gap-7 xl:gap-9 2xl:gap-10" aria-label="Principale">
-          {mainNav.map((item) => (
-            <NavLink key={item.href} href={item.href} label={item.label} />
-          ))}
-        </nav>
-
+    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-white/10">
+      <div className="relative mx-auto flex max-w-content flex-col items-center px-6 py-4 sm:py-5 lg:px-10">
         <button
           type="button"
-          className="inline-flex h-12 min-w-[5.25rem] items-center justify-center rounded border-2 border-black/25 px-5 font-sans text-sm font-semibold uppercase tracking-widest text-black sm:text-base lg:hidden"
+          className="absolute right-0 top-4 inline-flex h-9 items-center justify-center px-3 font-sans text-[0.65rem] font-medium uppercase tracking-[0.18em] text-white/80 transition hover:text-white sm:top-5 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? "Fermer" : "Menu"}
         </button>
+
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center justify-center leading-none"
+          onClick={() => setOpen(false)}
+        >
+          <SiteLogo className="transition-opacity group-hover:opacity-90" />
+        </Link>
+
+        <nav
+          className="mt-3 hidden w-full flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:flex xl:gap-x-7"
+          aria-label="Principale"
+        >
+          {mainNav.map((item) => (
+            <NavLink key={item.href} href={item.href} label={item.label} />
+          ))}
+        </nav>
       </div>
 
       <div
         id="mobile-nav"
-        className={`border-t-2 border-black/15 bg-white lg:hidden ${
+        className={`border-t border-white/10 lg:hidden ${
           open ? "max-h-[640px] opacity-100" : "max-h-0 overflow-hidden opacity-0"
         } transition-all duration-300`}
       >
-        <nav className="flex flex-col gap-6 px-6 py-8" aria-label="Mobile">
+        <nav className="flex flex-col items-center gap-5 px-6 py-8" aria-label="Mobile">
           {mainNav.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -70,10 +73,10 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-sans text-xl text-black sm:text-2xl ${
+                className={`font-sans text-sm tracking-[0.06em] ${
                   active
-                    ? "font-semibold underline decoration-2 decoration-black underline-offset-[0.18em]"
-                    : "font-medium"
+                    ? "font-medium text-white underline decoration-1 decoration-white/70 underline-offset-[0.35em]"
+                    : "font-normal text-white/80"
                 }`}
                 onClick={() => setOpen(false)}
               >
