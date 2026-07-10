@@ -359,6 +359,19 @@ html[data-heading-font="3"] footer {
     color: #000000 !important;
   }
 
+  .legal-prose p + p {
+    margin-top: 0.75rem;
+  }
+
+  .legal-prose strong {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+  }
+
+  .legal-prose code {
+    font-size: 0.9em;
+  }
+
   .marque-visual-bg {
     background-color: #ffffff !important;
   }

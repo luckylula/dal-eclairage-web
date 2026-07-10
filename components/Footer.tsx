@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteLogo } from "@/components/SiteLogo";
+import { legalFooterLinks } from "@/lib/legal";
 import { mainNav } from "@/lib/nav";
 import { contactBlock, siteName, siteTagline } from "@/lib/site";
 
@@ -75,9 +76,19 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-content flex-col gap-2 px-6 py-6 font-sans text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <p>© {new Date().getFullYear()} {siteName}. [Mentions légales — placeholder]</p>
-          <p>[Politique de confidentialité — placeholder]</p>
+        <div className="mx-auto flex max-w-content flex-col gap-4 px-6 py-6 font-sans text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+          <p>© {new Date().getFullYear()} {siteName}</p>
+          <nav aria-label="Informations légales" className="flex flex-wrap gap-x-6 gap-y-2">
+            {legalFooterLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-white/70 underline-offset-4 transition hover:text-dal hover:underline"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

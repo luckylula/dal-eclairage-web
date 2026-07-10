@@ -1,5 +1,6 @@
 "use client";
 
+import { FormPrivacyNotice } from "@/components/FormPrivacyNotice";
 import { useState, type FormEvent } from "react";
 
 const inputClass =
@@ -83,6 +84,7 @@ export function ContactForm() {
         </label>
         <textarea id="c-msg" name="message" required rows={6} className={inputClass} />
       </div>
+      <FormPrivacyNotice />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"

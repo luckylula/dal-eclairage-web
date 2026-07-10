@@ -1,5 +1,6 @@
 "use client";
 
+import { FormPrivacyNotice } from "@/components/FormPrivacyNotice";
 import { useState, type FormEvent } from "react";
 
 const labelClass =
@@ -231,7 +232,9 @@ export function ProjetBriefForm() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 pt-4 sm:flex-row sm:items-center sm:justify-between">
+      <FormPrivacyNotice />
+
+      <div className="flex flex-col gap-6 pt-2 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
           disabled={status === "loading"}
