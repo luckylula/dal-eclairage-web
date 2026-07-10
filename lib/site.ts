@@ -2,6 +2,13 @@ export const siteName = "DAL Éclairage Hitech";
 
 export const siteTagline = "Spécialiste en éclairage technique et architectural sur Genève.";
 
+export type SocialLink = {
+  id: "linkedin" | "instagram";
+  label: string;
+  /** Définir l'URL pour activer le lien (ex. profil LinkedIn / Instagram). */
+  href?: string;
+};
+
 export const contactBlock = {
   addressLines: ["Rue du Tunnel 11B", "1227 Carouge (GE), Suisse"],
   phone: "022 308 18 28",
@@ -16,7 +23,15 @@ export const contactBlock = {
   mapsEmbedUrl:
     "https://www.google.com/maps?q=Rue+du+Tunnel+11B,+1227+Carouge,+Suisse&hl=fr&z=16&output=embed",
   social: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/placeholder" },
-    { label: "Instagram", href: "https://www.instagram.com/placeholder" },
-  ],
+    {
+      id: "linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/dal-eclairage-hitech",
+    },
+    {
+      id: "instagram",
+      label: "Instagram",
+      href: "https://www.instagram.com/daleclairagehitech/",
+    },
+  ] satisfies SocialLink[],
 };

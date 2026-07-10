@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteLogo } from "@/components/SiteLogo";
+import { SocialFooterLinks } from "@/components/SocialFooterLinks";
 import { legalFooterLinks } from "@/lib/legal";
 import { mainNav } from "@/lib/nav";
 import { contactBlock, siteName, siteTagline } from "@/lib/site";
@@ -47,7 +48,8 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-dal">
+          <SocialFooterLinks />
+          <p className="mt-6 font-sans text-sm font-semibold uppercase tracking-[0.2em] text-dal">
             Navigation
           </p>
           <ul className="mt-4 grid gap-3 font-sans text-lg font-medium text-white sm:grid-cols-2">
@@ -59,19 +61,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex gap-4">
-            {contactBlock.social.map((s) => (
-              <a
-                key={s.href}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-lg text-white underline-offset-4 hover:text-dal hover:underline"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 
