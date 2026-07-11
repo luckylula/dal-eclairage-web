@@ -1,0 +1,21 @@
+Photos de l'équipe — La Société
+================================
+
+Dossier : public/images/equipe/
+
+Déposez ici une photo par personne (JPG ou WebP recommandé, format portrait de préférence) :
+
+  HUBERT.png   → Hubert Darnet
+  LUCIE.png    → Lucie Benoit
+  ALAIN.png    → Alain Knaub
+  DAL.png      → 4e membre (nom / bio dans lib/societe-data.ts)
+
+Optionnel — photo de groupe (accueil) :
+
+  equipe-groupe.jpg   → bannière « Notre staff » sur la page d'accueil
+
+Conseils :
+- Résolution conseillée : au moins 800 × 1000 px (portrait 3:4)
+- Noms en minuscules, sans espaces ni accents dans le fichier
+
+Une fois les fichiers ajoutés, dites-le dans le chat : les photos seront branchées sur le site.

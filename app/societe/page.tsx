@@ -116,14 +116,26 @@ export default function SocietePage() {
             title="Les visages de DAL"
             lead="[Introduction équipe — placeholder. Profils complémentaires autour du conseil, de la technique et de la relation client.]"
           />
-          <div className="mt-14 grid gap-10 lg:grid-cols-3">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {equipe.map((m) => (
               <article key={m.seed} className="flex h-full flex-col border border-line bg-white shadow-sm">
-                <PlaceholderImage
-                  seed={m.seed}
-                  alt={`Photo ${m.nom}`}
-                  aspectClassName="aspect-[3/4]"
-                />
+                {m.photo ? (
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-line">
+                    <Image
+                      src={m.photo}
+                      alt={`Photo ${m.nom}`}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                  </div>
+                ) : (
+                  <PlaceholderImage
+                    seed={m.seed}
+                    alt={`Photo ${m.nom}`}
+                    aspectClassName="aspect-[3/4]"
+                  />
+                )}
                 <div className="flex flex-1 flex-col p-6 text-left lg:p-8">
                   <h3 className="font-serif text-xl text-ink">{m.nom}</h3>
                   {m.role ? (
