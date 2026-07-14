@@ -5,7 +5,7 @@ import { HomeRealisationsStaircase } from "@/components/HomeRealisationsStaircas
 import { HomeTeamSection } from "@/components/HomeTeamSection";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { heroCarouselSlides } from "@/lib/hero-carousel";
+import { accueilHeroVideos } from "@/lib/secciones-media";
 import { realisations } from "@/lib/realisations-data";
 
 const temoignages = [
@@ -28,7 +28,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HomeHeroCarousel slides={heroCarouselSlides} />
+      <HomeHeroCarousel videos={accueilHeroVideos} />
 
       <HomeTeamSection />
 

@@ -18,7 +18,7 @@ export default function MarquesPage() {
     <>
       <section className="relative min-h-[45vh] overflow-hidden border-b border-line bg-ink">
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_28%]"
           src={marquesHeroVideoSrc}
           autoPlay
           muted

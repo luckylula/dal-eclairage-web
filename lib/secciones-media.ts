@@ -22,9 +22,15 @@ export type SeccionCarouselSlide = {
   lieu?: "Intérieur" | "Extérieur";
 };
 
+export type SeccionVideoSlide = {
+  src: string;
+  label: string;
+};
+
 export type SeccionHeroConfig =
   | { mode: "video"; src: string }
-  | { mode: "carousel"; slides: SeccionCarouselSlide[] };
+  | { mode: "carousel"; slides: SeccionCarouselSlide[] }
+  | { mode: "videoCarousel"; slides: SeccionVideoSlide[] };
 
 const f = (section: SeccionId, file: string) =>
   encodeURI(`${seccionFolders[section]}/${file}`);
@@ -36,10 +42,12 @@ const f = (section: SeccionId, file: string) =>
  */
 export const seccionHeroMedia: Record<SeccionId, SeccionHeroConfig> = {
   accueil: {
-    mode: "carousel",
+    mode: "videoCarousel",
     slides: [
-      // Ex. après dépôt dans secciones/accueil/ :
-      // { src: f("accueil", "01.jpg"), alt: "Réalisation intérieure", lieu: "Intérieur" },
+      { src: f("accueil", "videodal3.mp4"), label: "DAL Éclairage Hitech" },
+      { src: f("accueil", "videodal4.mp4"), label: "DAL Éclairage Hitech" },
+      { src: f("accueil", "videodal6.mp4"), label: "DAL Éclairage Hitech" },
+      { src: f("accueil", "videodal1.mp4"), label: "DAL Éclairage Hitech" },
     ],
   },
   societe: {
@@ -48,11 +56,11 @@ export const seccionHeroMedia: Record<SeccionId, SeccionHeroConfig> = {
   },
   marques: {
     mode: "video",
-    src: "/videos/grok-video-a30c7402-7703-4ab4-bb63-4ad837cbc258.mp4",
+    src: f("marques", "videodal5.mp4"),
   },
   realisations: {
     mode: "video",
-    src: "/videos/grok-video-17df602e-09e2-4376-aa9e-80dc6c2543a7.mp4",
+    src: f("realisations", "videodal6.mp4"),
   },
   votreProjet: {
     mode: "video",
@@ -69,5 +77,9 @@ export const realisationsHeroVideoSrc =
   seccionHeroMedia.realisations.mode === "video" ? seccionHeroMedia.realisations.src : "";
 export const votreProjetHeroVideoSrc =
   seccionHeroMedia.votreProjet.mode === "video" ? seccionHeroMedia.votreProjet.src : "";
+
+/** Vidéos hero accueil — ordre : 3, 4, 6, 1 */
+export const accueilHeroVideos: SeccionVideoSlide[] =
+  seccionHeroMedia.accueil.mode === "videoCarousel" ? seccionHeroMedia.accueil.slides : [];
 
 export { f as seccionMediaPath };
