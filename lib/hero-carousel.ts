@@ -1,6 +1,7 @@
 /**
- * Photos du hero d’accueil — dossiers `public/images/fotos interior` et `fotos exterior`.
- * Modifiez les noms de fichiers ici si vous changez les images.
+ * Bannière d’accueil — déposer les photos dans `public/secciones/accueil/`
+ * puis les lister dans `lib/secciones-media.ts` (seccionHeroMedia.accueil).
+ * En attendant, diaporama depuis les dossiers historiques ci-dessous.
  */
 
 export type HeroSlide = {

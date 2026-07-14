@@ -1,0 +1,30 @@
+Bannières haut de page — photos ou vidéos
+=========================================
+
+Dossier racine : public/secciones/
+
+Chaque sous-dossier correspond à une page du site.
+Déposez-y les fichiers que vous voulez voir en haut (carrousel photo,
+vidéo en boucle, ou plusieurs images pour un diaporama).
+
+  accueil/        → Page d'accueil (bienvenue)
+  societe/        → La Société
+  marques/        → Nos Marques
+  realisations/   → Réalisations
+  votre-projet/   → Votre Projet
+
+Formats acceptés :
+  .mp4 .webm       vidéo
+  .jpg .jpeg .png .webp   photo
+
+Conseils :
+  - Noms simples, sans espaces (ex. hero.mp4, 01.jpg, 02.jpg)
+  - Vidéo : paysage, courte, en boucle, < 15 Mo si possible
+  - Plusieurs photos dans un dossier = carrousel possible
+
+Après avoir déposé vos fichiers, indiquez dans le chat
+quelle page et quels fichiers utiliser — le branchement se fait
+dans : lib/secciones-media.ts
+
+Note : les petites vidéos « Valeurs » (bas de La Société) restent dans
+public/videos/societe/valeurs/

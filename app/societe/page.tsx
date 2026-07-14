@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { EquipeMemberPhoto } from "@/components/EquipeMemberPhoto";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocieteHistoirePhoto } from "@/components/SocieteHistoirePhoto";
@@ -81,7 +82,14 @@ export default function SocietePage() {
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {equipe.map((m) => (
               <article key={m.seed} className="flex h-full flex-col border border-line bg-white shadow-sm">
-                {m.photo ? (
+                {m.photos?.length ? (
+                  <EquipeMemberPhoto
+                    slides={m.photos}
+                    alt={`Photo ${m.nom}`}
+                    sizes="(max-width: 1024px) 100vw, 25vw"
+                    defaultPhoto={m.photoDefault}
+                  />
+                ) : m.photo ? (
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-line">
                     <Image
                       src={m.photo}

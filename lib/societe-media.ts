@@ -6,11 +6,10 @@ export type SocieteValeur = {
 };
 
 /**
- * Médias page La Société — `public/videos` et `public/images/equipe`.
+ * Médias page La Société — `public/secciones/societe` et `public/images/equipe`.
  */
 
-/** Vidéo hero « La Société » — unique (voir aussi marques-media, realisations-media, votre-projet-media). */
-export const societeHeroVideoSrc = "/videos/imagine-82c0b4d5.mp4";
+export { societeHeroVideoSrc } from "@/lib/secciones-media";
 
 /** Valeurs + vidéos — `public/videos/societe/valeurs/` */
 export const societeValeurs: SocieteValeur[] = [
