@@ -2,39 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { SectionHeading } from "@/components/SectionHeading";
-import { societeHeroVideoSrc, societeHistoireInteriorSrc } from "@/lib/societe-media";
+import { SocieteHistoirePhoto } from "@/components/SocieteHistoirePhoto";
+import { societeHeroVideoSrc, societeValeurs } from "@/lib/societe-media";
 import { equipe } from "@/lib/societe-data";
-
-const valeurs = [
-  {
-    titre: "Échange sincère et durable",
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-        <path
-          strokeWidth="1.5"
-          d="M8 10h8M8 14h5M6 20l2-2h10a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v12z"
-        />
-      </svg>
-    ),
-  },
-  {
-    titre: "Accompagnement de proximité",
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-        <path strokeWidth="1.5" d="M12 21s7-4.5 7-10a7 7 0 10-14 0c0 5.5 7 10 7 10z" />
-        <circle cx="12" cy="11" r="2" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    titre: "Expérience technique",
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-        <path strokeWidth="1.5" d="M9 18h6M10 22h4M12 2v1M4 12H3m18 0h-1M5.6 5.6l-.7-.7m14.8 14.8l-.7-.7M5.6 18.4l-.7.7M18.4 5.6l.7-.7M12 6a6 6 0 016 6c0 3-2 5-4 6h-4c-2-1-4-3-4-6a6 6 0 016-6z" />
-      </svg>
-    ),
-  },
-];
 
 export const metadata = {
   title: "La Société",
@@ -95,15 +65,7 @@ export default function SocietePage() {
             </div>
           </div>
           <div className="order-1 lg:order-2">
-            <div className="relative aspect-[4/3] w-full overflow-hidden border border-line bg-line">
-              <Image
-                src={societeHistoireInteriorSrc}
-                alt="[Intérieur — histoire DAL]"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <SocieteHistoirePhoto />
           </div>
         </div>
       </section>
@@ -169,13 +131,24 @@ export default function SocietePage() {
             align="center"
           />
           <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {valeurs.map((v) => (
+            {societeValeurs.map((v) => (
               <div
                 key={v.titre}
-                className="flex flex-col items-center gap-4 border border-line bg-cream/50 p-8 text-center lg:p-10"
+                className="flex flex-col items-center gap-5 border border-line bg-cream/50 p-6 text-center lg:p-8"
               >
-                <div className="text-dal">{v.icon}</div>
-                <h3 className="font-serif text-2xl text-ink">{v.titre}</h3>
+                <div className="relative aspect-[3/4] w-full max-w-[160px] overflow-hidden border border-line bg-black/40 sm:max-w-[180px] lg:max-w-[200px]">
+                  <video
+                    className="h-full w-full object-cover"
+                    src={v.videoSrc}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    preload="metadata"
+                    aria-label={v.titre}
+                  />
+                </div>
+                <h3 className="font-serif text-xl text-ink lg:text-2xl">{v.titre}</h3>
               </div>
             ))}
           </div>

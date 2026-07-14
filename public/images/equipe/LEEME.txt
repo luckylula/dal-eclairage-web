@@ -12,7 +12,7 @@ Déposez ici une photo par personne (JPG ou WebP recommandé, format portrait de
 
 Optionnel — photo de groupe (accueil) :
 
-  equipe-groupe.jpg   → bannière « Notre staff » sur la page d'accueil
+  equipo1.png   → bannière « Notre staff » sur la page d'accueil
 
 Conseils :
 - Résolution conseillée : au moins 800 × 1000 px (portrait 3:4)
