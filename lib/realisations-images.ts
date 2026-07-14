@@ -47,13 +47,13 @@ export const realisationMedia = [
     description: "[Description — à compléter]",
   },
   {
-    file: "20250807_165354.jpg",
-    titre: "[Réalisation — à compléter]",
+    file: "Low Quality JPG - Mandarin Oriental Août 2024 II-16.jpg",
+    titre: "Mandarin Oriental — Genève",
     type: "Décoratif" as RealisationType,
     description: "[Description — à compléter]",
   },
   {
-    file: "e709bb63-e6b0-478c-a717-0d726efbd2f9.jpg",
+    file: "20250807_165354.jpg",
     titre: "[Réalisation — à compléter]",
     type: "Décoratif" as RealisationType,
     description: "[Description — à compléter]",
@@ -79,6 +79,7 @@ type RealisationMediaItem = {
   titre: string;
   type: RealisationType;
   description: string;
+  marque?: string;
 };
 
 /**
@@ -131,19 +132,20 @@ export const pixlumMedia: RealisationMediaItem[] = pixlumFiles.map((file) => ({
   titre: "[Réalisation — à compléter]",
   type: "Technique",
   description: "[Description — à compléter]",
+  marque: "Pixlum",
 }));
 
 export const realisationImagePaths: Record<string, string> = {
   ...Object.fromEntries(
     realisationMedia.map((item, index) => [
       `r${index + 1}`,
-      encodeURI(`${base}/${item.file}`),
+      `${encodeURI(`${base}/${item.file}`)}?v=3`,
     ]),
   ),
   ...Object.fromEntries(
     pixlumMedia.map((item, index) => [
       `pixlum-${index + 1}`,
-      encodeURI(`${pixlumBase}/${item.file}`),
+      `${encodeURI(`${pixlumBase}/${item.file}`)}?v=2`,
     ]),
   ),
 };

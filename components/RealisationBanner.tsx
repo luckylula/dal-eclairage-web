@@ -24,12 +24,21 @@ export function RealisationBanner({
         aria-hidden
       />
       <div className="absolute inset-x-0 bottom-0 px-6 pb-5 pt-12 sm:px-10 sm:pb-6 lg:px-12">
-        <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.18em] text-dal sm:text-[10px]">
-          {realisation.type}
-        </p>
-        <h3 className="mt-1 max-w-3xl font-serif text-base leading-snug text-white sm:text-lg md:text-xl">
-          {realisation.titre}
-        </h3>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.18em] text-dal sm:text-[10px]">
+            {realisation.type}
+          </p>
+          {realisation.marque ? (
+            <span className="font-sans text-[8px] font-medium uppercase tracking-[0.22em] text-white/55 sm:text-[9px]">
+              {realisation.marque}
+            </span>
+          ) : null}
+        </div>
+        {!realisation.titre.startsWith("[") ? (
+          <h3 className="mt-1 max-w-3xl font-serif text-base leading-snug text-white sm:text-lg md:text-xl">
+            {realisation.titre}
+          </h3>
+        ) : null}
       </div>
     </article>
   );

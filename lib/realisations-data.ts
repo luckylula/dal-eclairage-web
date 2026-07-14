@@ -12,14 +12,23 @@ export type Realisation = {
   type: RealisationType;
   description: string;
   seed: string;
+  /** Petite mention marque (ex. Pixlum) */
+  marque?: string;
 };
 
 function toRealisation(
-  item: { titre: string; type: RealisationType; description: string },
+  item: { titre: string; type: RealisationType; description: string; marque?: string },
   id: string,
   seed: string,
 ): Realisation {
-  return { id, titre: item.titre, type: item.type, description: item.description, seed };
+  return {
+    id,
+    titre: item.titre,
+    type: item.type,
+    description: item.description,
+    seed,
+    marque: item.marque,
+  };
 }
 
 /** Projets principaux — accueil, Votre Projet. */

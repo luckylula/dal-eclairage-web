@@ -32,8 +32,8 @@ export function RealisationFilterClient() {
               onClick={() => setFiltre(f)}
               className={`border px-4 py-2 font-sans text-xs uppercase tracking-widest transition ${
                 filtre === f
-                  ? "border-ink bg-ink text-white"
-                  : "border-line bg-white text-muted hover:border-ink hover:text-ink"
+                  ? "border-dal text-dal"
+                  : "border-line text-muted hover:border-dal hover:text-dal"
               }`}
             >
               {f}
