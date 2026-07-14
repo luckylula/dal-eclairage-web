@@ -53,7 +53,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var h=localStorage.getItem("dal-heading-font");if(h==="2"||h==="3")document.documentElement.dataset.headingFont=h;}catch(e){}})();`,
+            __html: `(function(){try{var h=localStorage.getItem("dal-heading-font");if(h==="2"||h==="3")document.documentElement.dataset.headingFont=h;var a=localStorage.getItem("dal-accent-color");if(a==="red")document.documentElement.dataset.accent="red";}catch(e){}})();`,
           }}
         />
       </head>
