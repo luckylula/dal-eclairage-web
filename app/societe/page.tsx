@@ -77,7 +77,7 @@ export default function SocietePage() {
             variant="inverted"
             eyebrow="Équipe"
             title="Les visages de DAL"
-            lead="[Introduction équipe — placeholder. Profils complémentaires autour du conseil, de la technique et de la relation client.]"
+            lead="Notre équipe met à disposition son savoir-faire technique afin d'assurer la réussite de chacun de vos projets, de la phase d'étude à la livraison des produits."
           />
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {equipe.map((m) => (

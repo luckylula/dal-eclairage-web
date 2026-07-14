@@ -56,7 +56,7 @@ export const seccionHeroMedia: Record<SeccionId, SeccionHeroConfig> = {
   },
   votreProjet: {
     mode: "video",
-    src: encodeURI("/videos/imagine-76a97ee1 (1).mp4"),
+    src: f("votreProjet", "planvideo.mp4"),
   },
 };
 

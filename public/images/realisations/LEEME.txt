@@ -1,16 +1,17 @@
 Photos des réalisations
 ========================
 
-Dossier : public/images/realisations/
+Dossier racine : public/images/realisations/
+  → projets principaux (accueil, Votre Projet, haut de Réalisations)
 
-Accueil — 3 dernières réalisations (lib/realisations-images.ts) :
+Sous-dossier Pixlum : public/images/realisations/pixlum/
+  → réalisations marque Pixlum (uniquement bas de page Réalisations)
 
-  r1 → 01/ce014bed-9610-495c-bb3d-67295fa1ac22.jpg
-  r2 → 02/geneva-mo-bar-2024-low.jpg
-  r3 → 03/RIT_1028-EDIT-low.jpg
+Ordre principal (lib/realisations-images.ts) :
+  1. dressing.jpg
+  2. geneva-mo-bar-2024-low.jpg
+  3. geneva-royal-terrace-suite-dining-room-low.jpg
+  4. 20260617_091154.jpg
+  … puis le reste
 
-Pour r4, r5, r6 : déposez dans 04/, 05/, 06/ et ajoutez la ligne dans realisations-images.ts.
-
-Titres et textes : lib/realisations-data.ts
-
-Après ajout : Ctrl+F5 sur le site.
+Vidéo bannière : public/secciones/realisations/

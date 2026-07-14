@@ -1,0 +1,12 @@
+Pixlum — réalisations marque
+=============================
+
+Dossier : public/images/realisations/pixlum/
+
+Déposez ici les photos de réalisations avec des luminaires Pixlum.
+Elles apparaissent uniquement sur la page Réalisations,
+sous les projets du dossier parent.
+
+Ajoutez chaque fichier dans lib/realisations-images.ts (pixlumMedia).
+
+Formats : .jpg .jpeg .png .webp
