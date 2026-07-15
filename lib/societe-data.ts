@@ -84,25 +84,4 @@ export const equipe: Membre[] = [
     seed: "dal-team-alain-knaub",
     photoDefault: "portrait",
   },
-  {
-    nom: "[Nom — à compléter]",
-    photos: [
-      {
-        src: "/images/equipe/dalaveclogo.jpg?v=2",
-        width: 720,
-        height: 1280,
-        label: "[Nom — à compléter] — avec logo DAL",
-        objectPosition: "50% 28%",
-      },
-      {
-        src: "/images/equipe/DAL.png",
-        width: 845,
-        height: 1024,
-        label: "[Nom — à compléter]",
-      },
-    ],
-    bio: "[Présentation — à compléter]",
-    seed: "dal-team-membre-4",
-    photoDefault: "avecLogo",
-  },
 ];

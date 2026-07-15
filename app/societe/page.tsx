@@ -79,7 +79,7 @@ export default function SocietePage() {
             title="Les visages de DAL"
             lead="Notre équipe met à disposition son savoir-faire technique afin d'assurer la réussite de chacun de vos projets, de la phase d'étude à la livraison des produits."
           />
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {equipe.map((m) => (
               <article key={m.seed} className="flex h-full flex-col border border-line bg-white shadow-sm">
                 {m.photos?.length ? (

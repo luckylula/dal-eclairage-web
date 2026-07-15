@@ -32,8 +32,11 @@ export type SeccionHeroConfig =
   | { mode: "carousel"; slides: SeccionCarouselSlide[] }
   | { mode: "videoCarousel"; slides: SeccionVideoSlide[] };
 
+/** Incrémenter après remplacement d'un fichier (même nom) pour forcer le rechargement. */
+const seccionMediaVersion = "v=4";
+
 const f = (section: SeccionId, file: string) =>
-  encodeURI(`${seccionFolders[section]}/${file}`);
+  `${encodeURI(`${seccionFolders[section]}/${file}`)}?${seccionMediaVersion}`;
 
 /**
  * Médias actifs par page — à mettre à jour quand vous déposez dans secciones/.
