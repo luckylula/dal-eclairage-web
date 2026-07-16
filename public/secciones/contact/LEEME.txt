@@ -1,0 +1,12 @@
+﻿Vidéo hero — page Contact
+=========================
+
+Déposez ici la vidéo de la bannière haute de /contact.
+
+Nom attendu :
+  contact.mp4
+
+Formats : .mp4 (recommandé) ou .webm
+Conseil : paysage, courte, en boucle, < 15 Mo si possible
+
+Après dépôt, dites-le dans le chat si le nom du fichier est différent.

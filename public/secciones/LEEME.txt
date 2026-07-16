@@ -12,6 +12,7 @@ vidéo en boucle, ou plusieurs images pour un diaporama).
   marques/        → Nos Marques
   realisations/   → Réalisations
   votre-projet/   → Votre Projet
+  contact/        → Contact
 
 Formats acceptés :
   .mp4 .webm       vidéo

@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { contactHeroVideoSrc } from "@/lib/contact-media";
 import { contactBlock, siteName, siteTagline } from "@/lib/site";
 
 export const metadata = {
@@ -60,6 +61,23 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-ink">
+        <div className="mx-auto max-w-content px-6 py-12 lg:px-10 lg:py-16">
+          <div className="relative aspect-[16/9] w-full overflow-hidden border border-white/15 bg-black sm:aspect-[21/10] lg:min-h-[28rem]">
+            <video
+              className="absolute inset-0 h-full w-full object-contain"
+              src={contactHeroVideoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="DAL Éclairage Hitech — boutique"
+            />
           </div>
         </div>
       </section>

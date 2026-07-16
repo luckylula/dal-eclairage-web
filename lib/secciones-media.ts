@@ -12,6 +12,7 @@ export const seccionFolders = {
   marques: `${SECCIONES_BASE}/marques`,
   realisations: `${SECCIONES_BASE}/realisations`,
   votreProjet: `${SECCIONES_BASE}/votre-projet`,
+  contact: `${SECCIONES_BASE}/contact`,
 } as const;
 
 export type SeccionId = keyof typeof seccionFolders;
@@ -69,6 +70,10 @@ export const seccionHeroMedia: Record<SeccionId, SeccionHeroConfig> = {
     mode: "video",
     src: f("votreProjet", "planvideo.mp4"),
   },
+  contact: {
+    mode: "video",
+    src: f("contact", "contact.mp4"),
+  },
 };
 
 /** Helpers pour les pages (vidéo unique) */
@@ -80,6 +85,8 @@ export const realisationsHeroVideoSrc =
   seccionHeroMedia.realisations.mode === "video" ? seccionHeroMedia.realisations.src : "";
 export const votreProjetHeroVideoSrc =
   seccionHeroMedia.votreProjet.mode === "video" ? seccionHeroMedia.votreProjet.src : "";
+export const contactHeroVideoSrc =
+  seccionHeroMedia.contact.mode === "video" ? seccionHeroMedia.contact.src : "";
 
 /** Vidéos hero accueil — ordre : 3, 4, 6, 1 */
 export const accueilHeroVideos: SeccionVideoSlide[] =
