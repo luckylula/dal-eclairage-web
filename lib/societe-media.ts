@@ -41,7 +41,7 @@ export const societeValeurs: SocieteValeur[] = [
 ];
 
 /** Incrémenter après remplacement d'un fichier (même nom) pour forcer le rechargement. */
-const societeEquipeMediaVersion = "v=5";
+const societeEquipeMediaVersion = "v=7";
 
 const equipePhoto = (file: string) =>
   `/images/equipe/${file}?${societeEquipeMediaVersion}`;
@@ -49,10 +49,10 @@ const equipePhoto = (file: string) =>
 /** Photos bloc « Histoire » — démo client (sélecteur adaptatif). */
 export const societeHistoireSlides: AdaptivePhotoSlide[] = [
   {
-    src: equipePhoto("equipo5.png"),
+    src: equipePhoto("equipo24.png"),
     width: 1274,
     height: 1234,
-    label: "Équipe — atelier",
+    label: "Équipe — DAL Éclairage",
   },
   {
     src: equipePhoto("equipo2.png"),
@@ -61,15 +61,27 @@ export const societeHistoireSlides: AdaptivePhotoSlide[] = [
     label: "Équipe — plans et luminaires",
   },
   {
-    src: equipePhoto("equipo3.png"),
-    width: 1040,
-    height: 992,
-    label: "Équipe — showroom",
+    src: equipePhoto("equipo6.png"),
+    width: 912,
+    height: 1136,
+    label: "Équipe — étude de projet",
   },
   {
     src: equipePhoto("equipo7.png"),
     width: 1040,
     height: 992,
-    label: "Équipe — étude de projet",
+    label: "Équipe — showroom",
+  },
+  {
+    src: equipePhoto("equipo17.png"),
+    width: 1276,
+    height: 1233,
+    label: "Équipe — atelier",
+  },
+  {
+    src: equipePhoto("equipo19.png"),
+    width: 1536,
+    height: 1024,
+    label: "Équipe — showroom DAL",
   },
 ];
