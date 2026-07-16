@@ -144,9 +144,12 @@ export default function SocietePage() {
                 key={v.titre}
                 className="flex flex-col items-center gap-5 border border-line bg-cream/50 p-6 text-center lg:p-8"
               >
-                <div className="relative aspect-[3/4] w-full max-w-[160px] overflow-hidden border border-line bg-black/40 sm:max-w-[180px] lg:max-w-[200px]">
+                <div
+                  className="relative w-full max-w-[260px] overflow-hidden border border-line bg-black/40"
+                  style={{ aspectRatio: `${v.width} / ${v.height}` }}
+                >
                   <video
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     src={v.videoSrc}
                     muted
                     loop

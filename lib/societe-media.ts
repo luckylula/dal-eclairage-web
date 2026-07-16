@@ -3,6 +3,8 @@ import type { AdaptivePhotoSlide } from "@/components/AdaptivePhotoGallery";
 export type SocieteValeur = {
   titre: string;
   videoSrc: string;
+  width: number;
+  height: number;
 };
 
 /**
@@ -12,7 +14,7 @@ export type SocieteValeur = {
 export { societeHeroVideoSrc } from "@/lib/secciones-media";
 
 /** Valeurs + vidéos — `public/videos/societe/valeurs/` */
-const societeValeursMediaVersion = "v=2";
+const societeValeursMediaVersion = "v=3";
 
 const valeurVideo = (file: string) =>
   `/videos/societe/valeurs/${file}?${societeValeursMediaVersion}`;
@@ -20,15 +22,21 @@ const valeurVideo = (file: string) =>
 export const societeValeurs: SocieteValeur[] = [
   {
     titre: "Échange sincère et durable",
-    videoSrc: valeurVideo("workinprogress1.mp4"),
+    videoSrc: valeurVideo("workinprogress5.mp4"),
+    width: 1056,
+    height: 848,
   },
   {
     titre: "Accompagnement de proximité",
-    videoSrc: valeurVideo("workinprogress2.mp4"),
+    videoSrc: valeurVideo("workinprogress7.mp4"),
+    width: 960,
+    height: 944,
   },
   {
     titre: "Expérience technique",
-    videoSrc: valeurVideo("workinprogress3.mp4"),
+    videoSrc: valeurVideo("workinprogress6.mp4"),
+    width: 1168,
+    height: 768,
   },
 ];
 
