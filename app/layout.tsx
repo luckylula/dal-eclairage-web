@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { DM_Sans, Jost, Montserrat, Playfair_Display } from "next/font/google";
+import { DM_Sans, Montserrat } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { SelectorDock } from "@/components/SelectorDock";
 import { siteName } from "@/lib/site";
 import "./globals.css";
 
@@ -10,20 +9,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-montserrat",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jost",
   display: "swap",
 });
 
@@ -49,19 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${montserrat.variable} ${playfair.variable} ${jost.variable} ${dmSans.variable}`}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var h=localStorage.getItem("dal-heading-font");if(h==="2"||h==="3")document.documentElement.dataset.headingFont=h;var a=localStorage.getItem("dal-accent-color");if(a==="red")document.documentElement.dataset.accent="red";}catch(e){}})();`,
-          }}
-        />
-      </head>
+    <html lang="fr" className={`${montserrat.variable} ${dmSans.variable}`}>
       <body className="min-h-screen bg-black font-sans text-white antialiased">
         <Header />
         <main className="pt-[8.5rem] sm:pt-[9rem] lg:pt-[10.5rem]">{children}</main>
         <Footer />
-        <SelectorDock />
       </body>
     </html>
   );

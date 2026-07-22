@@ -3,7 +3,7 @@ type Props = {
   title: string;
   lead?: string;
   align?: "left" | "center";
-  /** Fond sombre : texte clair (accroche DAL en rouge). */
+  /** Fond sombre : texte clair (accroche DAL en doré). */
   variant?: "default" | "inverted";
 };
 

@@ -15,22 +15,7 @@
   --color-line: rgba(255, 255, 255, 0.14);
   --theme-cream: #f5f0e8;
   --theme-gold: #c9a84c;
-  --theme-red: #fa2e2f;
   --theme-brown: #8b6914;
-}
-
-html[data-accent="red"] {
-  --color-accent: var(--theme-red);
-}
-
-html[data-heading-font="2"] {
-  --font-heading: var(--font-playfair), Georgia, serif;
-  --font-body: var(--font-playfair), Georgia, serif;
-}
-
-html[data-heading-font="3"] {
-  --font-heading: var(--font-jost), system-ui, sans-serif;
-  --font-body: var(--font-jost), system-ui, sans-serif;
 }
 
 html {
@@ -147,35 +132,6 @@ h3 {
   font-family: var(--font-heading) !important;
   font-weight: 600;
   letter-spacing: 0.01em;
-}
-
-html[data-heading-font="2"] h1,
-html[data-heading-font="2"] h2,
-html[data-heading-font="2"] h3 {
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-html[data-heading-font="2"] body,
-html[data-heading-font="2"] header,
-html[data-heading-font="2"] footer {
-  font-weight: 400;
-}
-
-html[data-heading-font="3"] h1,
-html[data-heading-font="3"] h2,
-html[data-heading-font="3"] h3 {
-  font-weight: 700;
-  letter-spacing: -0.015em;
-}
-
-html[data-heading-font="3"] body {
-  font-weight: 300;
-}
-
-html[data-heading-font="3"] header,
-html[data-heading-font="3"] footer {
-  font-weight: 300;
 }
 
 @layer utilities {
