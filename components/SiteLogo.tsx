@@ -6,7 +6,7 @@ type Props = {
 };
 
 const logoVideoClass =
-  "logo-header-video mx-auto block h-[5rem] w-auto max-w-[min(16rem,52vw)] object-contain object-center sm:h-[5.5rem] md:h-[6rem]";
+  "logo-header-video mx-auto block h-[9rem] w-auto max-w-[min(28rem,78vw)] object-contain object-center sm:h-[10rem] md:h-[11rem]";
 
 export function SiteLogo({ className = "" }: Props) {
   return (

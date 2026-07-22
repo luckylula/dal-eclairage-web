@@ -72,11 +72,6 @@ export default function HomePage() {
             </h2>
           </Reveal>
           <Reveal direction="up" delay={140}>
-            <p className="mx-auto mt-5 max-w-2xl font-sans text-muted">
-              [Court texte CTA — placeholder. Brief, échantillons, visite ou appel découverte.]
-            </p>
-          </Reveal>
-          <Reveal direction="up" delay={300}>
             <Link
               href="/votre-projet"
               className="mt-10 inline-flex bg-dal px-10 py-3.5 font-sans text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-dal/90"

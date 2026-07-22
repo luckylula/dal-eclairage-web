@@ -13,7 +13,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`whitespace-nowrap font-sans text-[0.75rem] tracking-[0.08em] transition-colors sm:text-[0.8125rem] lg:text-sm ${
+      className={`whitespace-nowrap font-sans text-base tracking-[0.08em] transition-colors sm:text-[1.0625rem] lg:text-lg ${
         active
           ? "font-medium text-white underline decoration-1 decoration-white/70 underline-offset-[0.35em]"
           : "font-normal text-white/80 hover:text-white"
@@ -73,7 +73,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-sans text-sm tracking-[0.06em] ${
+                className={`font-sans text-lg tracking-[0.06em] ${
                   active
                     ? "font-medium text-white underline decoration-1 decoration-white/70 underline-offset-[0.35em]"
                     : "font-normal text-white/80"
