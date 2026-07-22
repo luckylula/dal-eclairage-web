@@ -55,100 +55,73 @@ export const realisationMedia = [
   {
     file: "20250807_165354.jpg",
     titre: "[Réalisation — à compléter]",
-    type: "Décoratif" as RealisationType,
+    type: "Technique" as RealisationType,
     description: "[Description — à compléter]",
   },
   {
     file: "IMG-20241106-WA0020.jpg",
     titre: "[Réalisation — à compléter]",
-    type: "Décoratif" as RealisationType,
+    type: "Extérieur" as RealisationType,
     description: "[Description — à compléter]",
   },
   {
     file: "IMG-20260605-WA0005.jpg",
     titre: "[Réalisation — à compléter]",
-    type: "Décoratif" as RealisationType,
+    type: "Technique" as RealisationType,
+    description: "[Description — à compléter]",
+  },
+  {
+    file: "Extérieur.jpg",
+    titre: "[Réalisation extérieur — à compléter]",
+    type: "Extérieur" as RealisationType,
+    description: "[Description — à compléter]",
+  },
+  {
+    file: "Technique.jpg",
+    titre: "[Réalisation technique — à compléter]",
+    type: "Technique" as RealisationType,
+    description: "[Description — à compléter]",
+    objectPosition: "50% 0%",
+  },
+  {
+    file: "Extérieur3.jpg",
+    titre: "[Réalisation extérieur — à compléter]",
+    type: "Extérieur" as RealisationType,
+    description: "[Description — à compléter]",
+  },
+  {
+    file: "Technique2.png",
+    titre: "[Réalisation technique — à compléter]",
+    type: "Technique" as RealisationType,
+    description: "[Description — à compléter]",
+    objectPosition: "50% 0%",
+  },
+  {
+    file: "Technique1.jpg",
+    titre: "[Réalisation technique — à compléter]",
+    type: "Technique" as RealisationType,
+    description: "[Description — à compléter]",
+  },
+  {
+    file: "Technique3.png",
+    titre: "[Réalisation technique — à compléter]",
+    type: "Technique" as RealisationType,
+    description: "[Description — à compléter]",
+  },
+  {
+    file: "Technique4.png",
+    titre: "[Réalisation technique — à compléter]",
+    type: "Technique" as RealisationType,
     description: "[Description — à compléter]",
   },
 ] as const;
 
-const pixlumBase = `${base}/pixlum`;
-
-type RealisationMediaItem = {
-  file: string;
-  titre: string;
-  type: RealisationType;
-  description: string;
-  marque?: string;
-};
-
-/**
- * Réalisations Pixlum — `public/images/realisations/pixlum/`.
- * Affichées uniquement en bas de la page Réalisations.
- */
-const pixlumFiles = [
-  "01.jpg",
-  "15f6860a750dcaf53de89a6bbdb9eb70dc1819a9.jpg",
-  "2d8ca0f92703b5d0979fab70c90da6a5e1240693.jpg",
-  "301b0876fe56a55b3cfbc615a4ca190e.jpg",
-  "36580e4597d3a05f31e0917e5bc04369.jpg",
-  "94be53880b6a4fed4aa8ffd94df5391f31015cd8.jpg",
-  "9bd3c68dcead5ccb1723b6e52846c8d1692b1100.jpg",
-  "a0cb91f3ba5a2e6f476ff0c6cc90d52cbbff2918.jpg",
-  "AI45_001_Cam_001_C4D.jpg",
-  "AI46_001_C4D.jpg",
-  "AI46_003_C4D.jpg",
-  "AI46_004_C4D.jpg",
-  "AI46_005_C4D.jpg",
-  "AI46_010_C4D.jpg",
-  "AI48_002_cam_01_C4D.jpg",
-  "AI48_003_cam_01_C4D.jpg",
-  "AI48_005_cam_01_C4D.jpg",
-  "AI48_009_cam_01_PP_1.jpg",
-  "AI50_002_cam_01_PP.jpg",
-  "AI50_003_cam_03_PP_1.jpg",
-  "AI50_004_cam_02_PP.jpg",
-  "AI51_001_cam_001_PP.jpg",
-  "AI51_002_cam001_PP.jpg",
-  "AI51_002_cam003_PP.jpg",
-  "AI51_002_cam004_PP.jpg",
-  "AI51_002_cam005_PP.jpg",
-  "AI51_003_Cam_001_PP.jpg",
-  "AI51_003_Cam_002_PP.jpg",
-  "AI51_003_Cam_004_PP.jpg",
-  "AI51_003_Cam_005_PP.jpg",
-  "AI51_004_Cam_003_PP.jpg",
-  "AI_vol4_02_01.jpg",
-  "AI_vol4_02_02.jpg",
-  "AI_vol4_5_Cam_04.jpg",
-  "cac392bd32616f8f9c90bdda6b8b9050.jpg",
-  "e00f32aa44e7a72112a56d2ab0ac7650.jpg",
-  "fb3b8f486aab3d36cdfc9551659e30b6.jpg",
-  "fc177875ab8cefb8c0fbb353f5ed392a47b52690.jpg",
-] as const;
-
-export const pixlumMedia: RealisationMediaItem[] = pixlumFiles.map((file) => ({
-  file,
-  titre: "[Réalisation — à compléter]",
-  type: "Technique",
-  description: "[Description — à compléter]",
-  marque: "Pixlum",
-}));
-
-export const realisationImagePaths: Record<string, string> = {
-  ...Object.fromEntries(
-    realisationMedia.map((item, index) => [
-      `r${index + 1}`,
-      `${encodeURI(`${base}/${item.file}`)}?v=3`,
-    ]),
-  ),
-  ...Object.fromEntries(
-    pixlumMedia.map((item, index) => [
-      `pixlum-${index + 1}`,
-      `${encodeURI(`${pixlumBase}/${item.file}`)}?v=2`,
-    ]),
-  ),
-};
+export const realisationImagePaths: Record<string, string> = Object.fromEntries(
+  realisationMedia.map((item, index) => [
+    `r${index + 1}`,
+    `${encodeURI(`${base}/${item.file}`)}?v=4`,
+  ]),
+);
 
 /** Chemin public de la photo d'une réalisation, ou null si aucune image définie. */
 export function getRealisationImageSrc(id: string): string | null {

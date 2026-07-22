@@ -11,13 +11,15 @@ export function RealisationBanner({
   sizes = "100vw",
 }: Props) {
   return (
-    <article className="group relative aspect-[16/9] w-full overflow-hidden bg-ink sm:aspect-[21/9]">
+    <article className="group relative aspect-[16/10] w-full overflow-hidden bg-ink sm:aspect-[16/9]">
       <RealisationImage
         id={realisation.id}
         seed={realisation.seed}
         alt={realisation.titre}
         fillContainer
         sizes={sizes}
+        imageClassName="object-cover"
+        objectPosition={realisation.objectPosition ?? "50% 50%"}
       />
       <div
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"

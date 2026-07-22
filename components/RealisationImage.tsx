@@ -13,6 +13,10 @@ type Props = {
   priority?: boolean;
   fillContainer?: boolean;
   sizes?: string;
+  /** Classes appliquées à l’image (ex. object-contain). */
+  imageClassName?: string;
+  /** Recadrage — ex. `50% 0%` pour ancrer le haut de la photo. */
+  objectPosition?: string;
 };
 
 export function RealisationImage({
@@ -23,6 +27,8 @@ export function RealisationImage({
   priority = false,
   fillContainer = false,
   sizes = "(max-width: 768px) 90vw, 38vw",
+  imageClassName = "object-cover transition-transform duration-500 group-hover:scale-[1.03]",
+  objectPosition,
 }: Props) {
   const src = getRealisationImageSrc(id);
   const [failed, setFailed] = useState(!src);
@@ -49,7 +55,8 @@ export function RealisationImage({
         alt={alt}
         fill
         sizes={sizes}
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        className={imageClassName}
+        style={objectPosition ? { objectPosition } : undefined}
         priority={priority}
         onError={() => setFailed(true)}
       />

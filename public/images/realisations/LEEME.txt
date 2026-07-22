@@ -1,11 +1,17 @@
 Photos des réalisations
 ========================
 
-Dossier racine : public/images/realisations/
-  dressing.jpg, geneva-mo-bar-2024-low.jpg, geneva-royal-terrace-suite-dining-room-low.jpg
-  20260617_091154.jpg, RIT_1028-EDIT-low.jpg, Mandarin Oriental…, 20250807_165354.jpg
-  IMG-20241106-WA0020.jpg, IMG-20260605-WA0005.jpg
+Dossier : public/images/realisations/
 
-Pixlum : public/images/realisations/pixlum/ (37 fichiers)
+Ordre d'affichage (lib/realisations-images.ts) :
+
+1–10  photos principales (dressing, MO Bar, Mandarin, etc.)
+11    Extérieur.jpg
+12    Technique.jpg
+13    Extérieur3.jpg
+14    Technique2.png
+15    Technique1.jpg
+16    Technique3.png
+17    Technique4.png
 
 Configuration : lib/realisations-images.ts

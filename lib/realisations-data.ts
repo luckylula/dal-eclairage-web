@@ -1,4 +1,4 @@
-import { pixlumMedia, realisationMedia } from "@/lib/realisations-images";
+import { realisationMedia } from "@/lib/realisations-images";
 
 export type RealisationType =
   | "Technique"
@@ -14,10 +14,18 @@ export type Realisation = {
   seed: string;
   /** Petite mention marque (ex. Pixlum) */
   marque?: string;
+  /** Recadrage CSS object-position (ex. `50% 0%` pour ancrer en haut) */
+  objectPosition?: string;
 };
 
 function toRealisation(
-  item: { titre: string; type: RealisationType; description: string; marque?: string },
+  item: {
+    titre: string;
+    type: RealisationType;
+    description: string;
+    marque?: string;
+    objectPosition?: string;
+  },
   id: string,
   seed: string,
 ): Realisation {
@@ -28,17 +36,14 @@ function toRealisation(
     description: item.description,
     seed,
     marque: item.marque,
+    objectPosition: item.objectPosition,
   };
 }
 
-/** Projets principaux — accueil, Votre Projet. */
+/** Projets principaux — accueil, Votre Projet, page Réalisations. */
 export const realisations: Realisation[] = realisationMedia.map((item, index) =>
   toRealisation(item, `r${index + 1}`, `dal-real-${index + 1}`),
 );
 
-const pixlumRealisations: Realisation[] = pixlumMedia.map((item, index) =>
-  toRealisation(item, `pixlum-${index + 1}`, `dal-real-pixlum-${index + 1}`),
-);
-
-/** Page Réalisations — toutes les images à la suite (principales puis pixlum/). */
-export const realisationsPage: Realisation[] = [...realisations, ...pixlumRealisations];
+/** Page Réalisations — uniquement les 10 photos principales. */
+export const realisationsPage: Realisation[] = realisations;
