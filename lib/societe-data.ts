@@ -36,7 +36,7 @@ export const equipe: Membre[] = [
     nom: "Lucie Benoit",
     photos: [
       {
-        src: "/images/equipe/lucieaveclogo.jpg",
+        src: "/images/equipe/lucieaveclogo.png",
         width: 720,
         height: 1280,
         label: "Lucie Benoit — avec logo DAL",
@@ -50,7 +50,7 @@ export const equipe: Membre[] = [
     nom: "Alain Knaub",
     photos: [
       {
-        src: "/images/equipe/alainaveclogo.jpg",
+        src: "/images/equipe/alainaveclogo.png",
         width: 720,
         height: 1280,
         label: "Alain Knaub — avec logo DAL",
