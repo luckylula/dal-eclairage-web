@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { EquipeMemberPhoto } from "@/components/EquipeMemberPhoto";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { SocieteHistoirePhoto } from "@/components/SocieteHistoirePhoto";
 import { societeHeroVideoSrc, societeValeurs } from "@/lib/societe-media";
 import { equipe } from "@/lib/societe-data";
 
@@ -41,16 +41,16 @@ export default function SocietePage() {
       </section>
 
       <section className="bg-white py-20 lg:py-28">
-        <div className="mx-auto grid max-w-content gap-14 px-6 lg:grid-cols-2 lg:items-start lg:gap-20 lg:px-10">
-          <div className="order-2 lg:order-1">
+        <div className="mx-auto max-w-content px-6 lg:px-10">
+          <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Histoire"
               title="Une présence ancrée dans l’éclairage professionnel"
             />
             <div className="mt-8 space-y-6 font-sans text-base leading-relaxed text-muted">
               <p>
-                Implantée à Genève, DAL ECLAIRAGE HITECH est un acteur local reconnu dans le domaine Dal
-                Eclairage. Forte d&apos;une expérience confirmée, notre équipe travaille auprès des
+                Implantée à Genève, DAL ECLAIRAGE HITECH est un acteur local reconnu dans le domaine de
+                l&apos;éclairage. Forte d&apos;une expérience confirmée, notre équipe travaille auprès des
                 professionnels depuis plus de 15 ans dans la conception et la mise en œuvre de solutions
                 d&apos;éclairage performantes, esthétiques et durables.
               </p>
@@ -65,9 +65,6 @@ export default function SocietePage() {
               </p>
             </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <SocieteHistoirePhoto />
-          </div>
         </div>
       </section>
 
@@ -77,7 +74,6 @@ export default function SocietePage() {
             variant="inverted"
             eyebrow="Équipe"
             title="Les visages de DAL"
-            lead="Notre équipe met à disposition son savoir-faire technique afin d'assurer la réussite de chacun de vos projets, de la phase d'étude à la livraison des produits."
           />
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {equipe.map((m) => (
@@ -87,7 +83,6 @@ export default function SocietePage() {
                     slides={m.photos}
                     alt={`Photo ${m.nom}`}
                     sizes="(max-width: 1024px) 100vw, 25vw"
-                    defaultPhoto={m.photoDefault}
                   />
                 ) : m.photo ? (
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-line">
@@ -138,29 +133,21 @@ export default function SocietePage() {
             title="Ce qui guide notre métier"
             align="center"
           />
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {societeValeurs.map((v) => (
-              <div
+          <div className="mt-16 grid gap-14 md:grid-cols-3 md:gap-10 lg:gap-14">
+            {societeValeurs.map((v, i) => (
+              <Reveal
                 key={v.titre}
-                className="flex flex-col items-center gap-5 border border-line bg-cream/50 p-6 text-center lg:p-8"
+                direction="up"
+                delay={i * 160}
+                className="flex justify-center"
               >
-                <div
-                  className="relative w-full max-w-[260px] overflow-hidden border border-line bg-black/40"
-                  style={{ aspectRatio: `${v.width} / ${v.height}` }}
-                >
-                  <video
-                    className="h-full w-full object-contain"
-                    src={v.videoSrc}
-                    muted
-                    loop
-                    playsInline
-                    autoPlay
-                    preload="metadata"
-                    aria-label={v.titre}
-                  />
+                <div className="valeur-card group flex max-w-[18rem] flex-col items-center text-center">
+                  <h3 className="font-serif text-2xl leading-snug text-[#c9a84c] transition-colors duration-300 group-hover:text-[#d4b85f] lg:text-[1.85rem]">
+                    {v.titre}
+                  </h3>
+                  <span className="valeur-underline mt-5 block h-px w-12 bg-[#c9a84c]" aria-hidden />
                 </div>
-                <h3 className="font-serif text-xl text-ink lg:text-2xl">{v.titre}</h3>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -316,6 +316,27 @@ html[data-heading-font="3"] footer {
   }
 }
 
+@keyframes valeur-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -0.45rem, 0);
+  }
+}
+
+@keyframes valeur-underline-in {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
 @keyframes tagline-marquee-scroll {
   0% {
     transform: translate3d(0, 0, 0);
@@ -565,6 +586,23 @@ html[data-heading-font="3"] footer {
     animation: transformation-video-zoom-in 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  .valeur-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .valeur-underline {
+    transform-origin: center;
+    transition: width 0.35s ease;
+  }
+
+  .valeur-card:hover {
+    transform: translate3d(0, -0.4rem, 0);
+  }
+
+  .valeur-card:hover .valeur-underline {
+    width: 4.5rem;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .home-about-text-frame,
     .home-about-text-frame:hover {
@@ -574,6 +612,16 @@ html[data-heading-font="3"] footer {
 
     .transformation-caption {
       animation: none;
+    }
+
+    .valeur-card,
+    .valeur-card:hover {
+      transform: none;
+      transition: none;
+    }
+
+    .valeur-underline {
+      transition: none;
     }
 
     .transformation-light-flash,
