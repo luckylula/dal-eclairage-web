@@ -64,8 +64,8 @@ export function Header() {
   useEffect(() => {
     const root = document.documentElement;
     const observer = new MutationObserver(() => {
-      const current = root.dataset.headerVariant;
-      if (isHeaderVariant(current ?? null) && current !== variant) {
+      const current = root.dataset.headerVariant ?? null;
+      if (isHeaderVariant(current) && current !== variant) {
         setVariant(current);
       }
     });
