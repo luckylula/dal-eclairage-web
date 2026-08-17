@@ -16,6 +16,8 @@ export type Realisation = {
   marque?: string;
   /** Recadrage CSS object-position (ex. `50% 0%` pour ancrer en haut) */
   objectPosition?: string;
+  /** `contain` affiche toute la photo (zoom réduit) ; défaut = cover */
+  imageFit?: "cover" | "contain";
 };
 
 function toRealisation(
@@ -25,6 +27,7 @@ function toRealisation(
     description: string;
     marque?: string;
     objectPosition?: string;
+    imageFit?: "cover" | "contain";
   },
   id: string,
   seed: string,
@@ -37,6 +40,7 @@ function toRealisation(
     seed,
     marque: item.marque,
     objectPosition: item.objectPosition,
+    imageFit: item.imageFit,
   };
 }
 

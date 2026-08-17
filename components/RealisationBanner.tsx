@@ -18,7 +18,7 @@ export function RealisationBanner({
         alt={realisation.titre}
         fillContainer
         sizes={sizes}
-        imageClassName="object-cover"
+        imageFit={realisation.imageFit}
         objectPosition={realisation.objectPosition ?? "50% 50%"}
       />
       <div

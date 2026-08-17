@@ -97,10 +97,11 @@ export const realisationMedia = [
     objectPosition: "50% 0%",
   },
   {
-    file: "Technique1.jpg",
+    file: "Technique1p.png",
     titre: "[Réalisation technique — à compléter]",
     type: "Technique" as RealisationType,
     description: "[Description — à compléter]",
+    objectPosition: "50% 0%",
   },
   {
     file: "Technique3.png",
@@ -113,13 +114,14 @@ export const realisationMedia = [
     titre: "[Réalisation technique — à compléter]",
     type: "Technique" as RealisationType,
     description: "[Description — à compléter]",
+    objectPosition: "50% 0%",
   },
 ] as const;
 
 export const realisationImagePaths: Record<string, string> = Object.fromEntries(
   realisationMedia.map((item, index) => [
     `r${index + 1}`,
-    `${encodeURI(`${base}/${item.file}`)}?v=4`,
+    `${encodeURI(`${base}/${item.file}`)}?v=5`,
   ]),
 );
 

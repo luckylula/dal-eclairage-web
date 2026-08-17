@@ -13,9 +13,11 @@ export function HomeHeroCarousel({ videos }: Props) {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [mediaErrors, setMediaErrors] = useState<Record<string, boolean>>({});
 
   const len = videos.length;
   const current = videos[index];
+  const currentFailed = current ? mediaErrors[current.src] : false;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -34,20 +36,28 @@ export function HomeHeroCarousel({ videos }: Props) {
 
   useEffect(() => {
     const video = videoRefs.current[index];
-    if (!video) return;
+    if (!video || currentFailed) return;
 
     video.currentTime = 0;
-    void video.play().catch(() => undefined);
+    void video.play().catch(() => {
+      setMediaErrors((prev) => ({ ...prev, [videos[index]?.src ?? ""]: true }));
+    });
 
     videoRefs.current.forEach((v, i) => {
       if (!v || i === index) return;
       v.pause();
       v.currentTime = 0;
     });
-  }, [index]);
+  }, [currentFailed, index, videos]);
 
   useEffect(() => {
     if (len <= 1 || reducedMotion) return;
+
+    const slide = videos[index];
+    if (!slide || mediaErrors[slide.src]) {
+      const id = window.setTimeout(() => go(1), FALLBACK_MS);
+      return () => window.clearTimeout(id);
+    }
 
     const video = videoRefs.current[index];
     if (!video) {
@@ -58,7 +68,7 @@ export function HomeHeroCarousel({ videos }: Props) {
     const onEnded = () => go(1);
     video.addEventListener("ended", onEnded);
     return () => video.removeEventListener("ended", onEnded);
-  }, [go, index, len, reducedMotion]);
+  }, [go, index, len, mediaErrors, reducedMotion, videos]);
 
   if (!len || !current) return null;
 
@@ -85,6 +95,7 @@ export function HomeHeroCarousel({ videos }: Props) {
               muted
               playsInline
               preload={i === 0 ? "auto" : "metadata"}
+              onError={() => setMediaErrors((prev) => ({ ...prev, [slide.src]: true }))}
               aria-hidden
             />
           </div>
@@ -124,7 +135,7 @@ export function HomeHeroCarousel({ videos }: Props) {
                 type="button"
                 role="tab"
                 aria-selected={i === index}
-                aria-label={`${slide.label} — vidéo ${i + 1} sur ${len}`}
+                aria-label={`${i + 1} sur ${len}`}
                 onClick={() => setIndex(i)}
                 className={`h-2.5 rounded-full transition-all ${
                   i === index ? "w-10 bg-dal" : "w-2.5 bg-white/45 hover:bg-white/70"
@@ -133,8 +144,6 @@ export function HomeHeroCarousel({ videos }: Props) {
             ))}
           </div>
           <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-white/70">
-            <span className="text-white/90">{current.label}</span>
-            {" · "}
             {index + 1} / {len}
           </p>
           <div className="flex gap-2">
@@ -159,7 +168,7 @@ export function HomeHeroCarousel({ videos }: Props) {
       </div>
 
       <p className="sr-only" aria-live="polite">
-        {current ? `${current.label}, vidéo ${index + 1} sur ${len}` : ""}
+        {current ? `${index + 1} sur ${len}` : ""}
       </p>
     </section>
   );

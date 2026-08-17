@@ -15,7 +15,6 @@ export function HomeTransformationShowcase({ items }: Props) {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [mediaErrors, setMediaErrors] = useState<Record<string, boolean>>({});
-  const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [flashKey, setFlashKey] = useState(0);
   const skipInitialFlash = useRef(true);
@@ -57,21 +56,17 @@ export function HomeTransformationShowcase({ items }: Props) {
     if (!video || mediaErrors[item?.id ?? ""]) return;
 
     video.currentTime = 0;
-    if (!paused) {
-      void video.play().catch(() => undefined);
-    } else {
-      video.pause();
-    }
+    void video.play().catch(() => undefined);
 
     videoRefs.current.forEach((v, i) => {
       if (!v || i === active) return;
       v.pause();
       v.currentTime = 0;
     });
-  }, [active, item?.id, mediaErrors, paused]);
+  }, [active, item?.id, mediaErrors]);
 
   useEffect(() => {
-    if (items.length <= 1 || paused || reducedMotion) return;
+    if (items.length <= 1 || reducedMotion) return;
 
     const current = items[active];
     if (!current || mediaErrors[current.id]) {
@@ -85,7 +80,7 @@ export function HomeTransformationShowcase({ items }: Props) {
     const onEnded = () => go(1);
     video.addEventListener("ended", onEnded);
     return () => video.removeEventListener("ended", onEnded);
-  }, [active, go, items, mediaErrors, paused, reducedMotion]);
+  }, [active, go, items, mediaErrors, reducedMotion]);
 
   const onTimeUpdate = useCallback(() => {
     const video = videoRefs.current[active];
@@ -100,14 +95,6 @@ export function HomeTransformationShowcase({ items }: Props) {
       className="group/showcase w-full"
       aria-roledescription="carousel"
       aria-label="Transformations lumineuses"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
-          setPaused(false);
-        }
-      }}
     >
       <div className="relative aspect-video w-full overflow-hidden border border-line bg-ink shadow-sm">
         <div
@@ -227,7 +214,6 @@ export function HomeTransformationShowcase({ items }: Props) {
 
       <p className="sr-only" aria-live="polite">
         {item.titre}, transformation {active + 1} sur {items.length}
-        {paused ? " — lecture en pause" : ""}
       </p>
     </div>
   );

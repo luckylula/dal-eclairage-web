@@ -16,6 +16,22 @@
   --theme-cream: #f5f0e8;
   --theme-gold: #c9a84c;
   --theme-brown: #8b6914;
+
+  --header-main-pt: 7rem;
+  --header-main-pt-sm: 7.5rem;
+  --header-main-pt-lg: 9rem;
+}
+
+html[data-header-variant="b"] {
+  --header-main-pt: 8.5rem;
+  --header-main-pt-sm: 9rem;
+  --header-main-pt-lg: 10.25rem;
+}
+
+html[data-header-variant="c"] {
+  --header-main-pt: 6.5rem;
+  --header-main-pt-sm: 7rem;
+  --header-main-pt-lg: 8.5rem;
 }
 
 html {
@@ -89,6 +105,22 @@ header {
   background-color: rgba(0, 0, 0, 0.72) !important;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
+}
+
+.site-main-offset {
+  padding-top: var(--header-main-pt);
+}
+
+@media (min-width: 640px) {
+  .site-main-offset {
+    padding-top: var(--header-main-pt-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-main-offset {
+    padding-top: var(--header-main-pt-lg);
+  }
 }
 
 footer {
