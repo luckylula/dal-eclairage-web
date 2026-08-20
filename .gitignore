@@ -36,3 +36,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# essais logo locaux (fichiers lourds / tests CapCut)
+/public/images/logo/0820*
+/public/images/logo/blancilum.mp4
+/public/images/logo/dal-eclairage-transparente.webm
+/public/images/logo/dal-logo-alpha.webm
+/public/images/logo/logo-alpha-frame.png
+/public/images/logo/otra-prueba.mp4
+/public/images/logo/pruebavideoilu.mp4
+/public/images/logo/*.mov

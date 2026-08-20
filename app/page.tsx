@@ -10,16 +10,16 @@ import { realisations } from "@/lib/realisations-data";
 
 const temoignages = [
   {
-    cite: "[Citation client — placeholder. Accompagnement professionnel et choix luminaires au niveau attendu.]",
-    auteur: "[Nom, fonction — placeholder]",
+    cite:
+      "Nous avons particulièrement apprécié la qualité de l'accompagnement et le professionnalisme de l'équipe tout au long de notre collaboration. Les conseils apportés ont toujours été pertinents et adaptés à nos besoins, avec une excellente connaissance des produits et une réelle attention portée à nos attentes. La qualité de la lustrerie proposée, le choix des produits ainsi que le sérieux dans le suivi des demandes sont également des points que nous avons beaucoup appréciés. La disponibilité, la réactivité et la fiabilité de l'équipe ont largement contribué au bon déroulement de nos projets et ont permis d'établir une relation de confiance. C'est donc avec plaisir que nous recommandons cette entreprise à toute personne recherchant un partenaire compétent, sérieux et de bon conseil dans le domaine de la lustrerie.",
+    auteur: "Sébastien Blanchet",
+    role: "Directeur — Econtrol SA",
   },
   {
-    cite: "[Deuxième témoignage — placeholder. Réactivité et expertise technique sur un chantier sensible.]",
-    auteur: "[Nom, secteur — placeholder]",
-  },
-  {
-    cite: "[Troisième témoignage — placeholder. Proposition claire, budgets maîtrisés, rendu final impeccable.]",
-    auteur: "[Nom, entreprise — placeholder]",
+    cite:
+      "Nous avons été très satisfaits de notre expérience avec votre équipe. Dès les premiers échanges, nous avons apprécié votre écoute, votre disponibilité et la qualité de vos conseils. L'accompagnement a été professionnel, clair et personnalisé, ce qui nous a permis d'avancer sereinement dans notre projet. Nous avons également été pleinement satisfaits de la qualité des produits et du sérieux avec lequel chaque étape a été suivie. La communication, le respect des engagements et l'attention portée à nos besoins ont été de vrais points forts. Nous recommandons sans hésitation votre entreprise pour votre professionnalisme, votre expertise et la qualité de votre accompagnement.",
+    auteur: "M. Agostini",
+    role: "Directeur technique — MANOTEL",
   },
 ];
 
@@ -46,15 +46,22 @@ export default function HomePage() {
               align="center"
             />
           </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
+          <div className="mt-14 grid gap-10 md:grid-cols-2">
             {temoignages.map((t, i) => {
-              const dir = i === 0 ? "left" : i === temoignages.length - 1 ? "right" : "up";
+              const dir = i === 0 ? "left" : "right";
               return (
-                <Reveal key={i} direction={dir} delay={i * 140}>
-                  <blockquote className="flex h-full flex-col border border-line bg-white p-8 text-center shadow-sm">
-                    <p className="font-serif text-xl leading-snug text-ink">&ldquo;{t.cite}&rdquo;</p>
-                    <footer className="mt-6 font-sans text-xs uppercase tracking-widest text-muted">
-                      {t.auteur}
+                <Reveal key={t.auteur} direction={dir} delay={i * 140}>
+                  <blockquote className="flex h-full flex-col border border-line bg-white p-8 text-left shadow-sm sm:p-10">
+                    <p className="font-serif text-base leading-relaxed text-ink sm:text-lg">
+                      &ldquo;{t.cite}&rdquo;
+                    </p>
+                    <footer className="mt-8 border-t border-line pt-5">
+                      <p className="font-sans text-sm font-semibold uppercase tracking-[0.14em] text-ink">
+                        {t.auteur}
+                      </p>
+                      <p className="mt-1 font-sans text-xs uppercase tracking-[0.16em] text-muted">
+                        {t.role}
+                      </p>
                     </footer>
                   </blockquote>
                 </Reveal>

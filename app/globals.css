@@ -17,21 +17,9 @@
   --theme-gold: #c9a84c;
   --theme-brown: #8b6914;
 
-  --header-main-pt: 7rem;
-  --header-main-pt-sm: 7.5rem;
-  --header-main-pt-lg: 9rem;
-}
-
-html[data-header-variant="b"] {
   --header-main-pt: 8.5rem;
   --header-main-pt-sm: 9rem;
   --header-main-pt-lg: 10.25rem;
-}
-
-html[data-header-variant="c"] {
-  --header-main-pt: 6.5rem;
-  --header-main-pt-sm: 7rem;
-  --header-main-pt-lg: 8.5rem;
 }
 
 html {

@@ -1,5 +1,5 @@
-/** Logo animé — version fond noir (header et footer). */
-export const logoVideoSrc = encodeURI("/images/logo/iluminado fondo negro.mp4");
+/** Logo animé — WebM VP9 avec alpha (`eclairage.webm`). */
+export const logoVideoSrc = encodeURI("/images/logo/eclairage.webm");
 
-export const logoVideoWidth = 1120;
-export const logoVideoHeight = 1088;
+export const logoVideoWidth = 1920;
+export const logoVideoHeight = 1080;

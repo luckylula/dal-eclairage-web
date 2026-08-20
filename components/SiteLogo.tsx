@@ -21,6 +21,7 @@ export function SiteLogo({ className }: Props) {
       preload="auto"
       aria-label={siteName}
       className={className ?? footerLogoClass}
+      style={{ backgroundColor: "transparent" }}
     />
   );
 }

@@ -34,7 +34,7 @@ export type SeccionHeroConfig =
   | { mode: "videoCarousel"; slides: SeccionVideoSlide[] };
 
 /** Incrémenter après remplacement d'un fichier (même nom) pour forcer le rechargement. */
-const seccionMediaVersion = "v=7";
+const seccionMediaVersion = "v=8";
 
 const f = (section: SeccionId, file: string) =>
   `${encodeURI(`${seccionFolders[section]}/${file}`)}?${seccionMediaVersion}`;
@@ -53,8 +53,7 @@ export const seccionHeroMedia: Record<SeccionId, SeccionHeroConfig> = {
       { src: f("accueil", "videodal55.mp4"), label: "3" },
       { src: f("accueil", "videodal4.mp4"), label: "4" },
       { src: f("accueil", "videodal11.mp4"), label: "5" },
-      { src: f("accueil", "videodal66.mp4"), label: "6" },
-      { src: f("accueil", "videodal3.mp4"), label: "7" },
+      { src: f("accueil", "videodal3.mp4"), label: "6" },
     ],
   },
   societe: {
@@ -91,7 +90,7 @@ export const votreProjetHeroVideoSrc =
 export const contactHeroVideoSrc =
   seccionHeroMedia.contact.mode === "video" ? seccionHeroMedia.contact.src : "";
 
-/** Vidéos hero accueil — 7 propositions en validation (libellées Vidéo 1–7). */
+/** Vidéos hero accueil — 6 vidéos (sans videodal66). */
 export const accueilHeroVideos: SeccionVideoSlide[] =
   seccionHeroMedia.accueil.mode === "videoCarousel" ? seccionHeroMedia.accueil.slides : [];
 
