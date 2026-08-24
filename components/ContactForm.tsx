@@ -13,9 +13,10 @@ export function ContactForm() {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("loading");
     setMessage("");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     const prenom = String(fd.get("prenom") ?? "").trim();
     const nom = String(fd.get("nom") ?? "").trim();
     const payload = {
@@ -42,11 +43,11 @@ export function ContactForm() {
         return;
       }
       setStatus("ok");
-      setMessage("[Message envoyé — placeholder. Merci.]");
-      e.currentTarget.reset();
+      setMessage("Merci. Votre message a bien été envoyé.");
+      form.reset();
     } catch {
       setStatus("err");
-      setMessage("[Erreur réseau — placeholder]");
+      setMessage("Erreur réseau. Vérifiez votre connexion.");
     }
   }
 

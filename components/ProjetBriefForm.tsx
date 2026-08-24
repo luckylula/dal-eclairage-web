@@ -26,9 +26,10 @@ export function ProjetBriefForm() {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("loading");
     setMessage("");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     const prenom = String(fd.get("prenom") ?? "").trim();
     const nom = String(fd.get("nom") ?? "").trim();
     const types = fd.getAll("typeEspace").map((v) => String(v).trim()).filter(Boolean);
@@ -69,7 +70,7 @@ export function ProjetBriefForm() {
       }
       setStatus("ok");
       setMessage("Merci. Nous vous recontactons sous peu.");
-      e.currentTarget.reset();
+      form.reset();
       setAutreType(false);
     } catch {
       setStatus("err");
