@@ -93,13 +93,37 @@ export async function POST(request: Request) {
         opt("Description", record.description),
       );
 
+      const isProjet = source === "brief" || source === "projet" || source === "votre-projet";
+      const adminSubject = isProjet
+        ? `Nouveau brief projet — ${nom}`
+        : `Nouveau message contact — ${nom}`;
+
       await resend.emails.send({
         from,
         to: [to],
-        subject: `[DAL — placeholder] Nouveau message (${source})`,
-        html: `<div style="font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a">${lines.join(
+        replyTo: email,
+        subject: adminSubject,
+        html: `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.5;color:#1a1a1a">${lines.join(
           "",
         )}</div>`,
+      });
+
+      const confirmIntro = isProjet
+        ? "Nous avons bien reçu votre brief projet."
+        : "Nous avons bien reçu votre message.";
+
+      await resend.emails.send({
+        from,
+        to: [email],
+        subject: "Confirmation — DAL Éclairage Hitech",
+        html: `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#1a1a1a">
+          <p>Bonjour ${escHtml(nom)},</p>
+          <p>${confirmIntro}</p>
+          <p>Notre équipe vous répondra dans les meilleurs délais.</p>
+          <p style="margin-top:24px">Bien cordialement,<br/><strong>DAL Éclairage Hitech</strong><br/>
+          <a href="https://www.dal-eclairage.ch">www.dal-eclairage.ch</a><br/>
+          <a href="mailto:info@dal-eclairage.ch">info@dal-eclairage.ch</a></p>
+        </div>`,
       });
     } catch (e) {
       console.error("[Resend]", e);
