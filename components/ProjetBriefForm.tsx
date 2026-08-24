@@ -69,7 +69,7 @@ export function ProjetBriefForm() {
         return;
       }
       setStatus("ok");
-      setMessage("Merci. Nous vous recontactons sous peu.");
+      setMessage("Merci. Votre message a bien été envoyé.");
       form.reset();
       setAutreType(false);
     } catch {
