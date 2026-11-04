@@ -75,7 +75,7 @@ export default function SocietePage() {
             eyebrow="Équipe"
             title="Les visages de DAL"
           />
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
             {equipe.map((m) => (
               <article key={m.seed} className="flex h-full flex-col border border-line bg-white shadow-sm">
                 {m.photos?.length ? (

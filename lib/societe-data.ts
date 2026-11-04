@@ -46,18 +46,4 @@ export const equipe: Membre[] = [
     bio: "Forte de 14 ans d'expérience, j'assure le suivi commercial, administratif et comptable de l'entreprise. Grâce à ma polyvalence et à mon sens de l'organisation, j'accompagne au quotidien nos clients, partenaires et équipes afin de garantir un service efficace et de qualité",
     seed: "dal-team-lucie-benoit",
   },
-  {
-    nom: "Alain Knaub",
-    photos: [
-      {
-        src: "/images/equipe/alainaveclogo.png",
-        width: 720,
-        height: 1280,
-        label: "Alain Knaub — avec logo DAL",
-        objectPosition: "50% 28%",
-      },
-    ],
-    bio: "Issu du monde de fabricants de luminaires, homme de terrain avec plus de 15 ans dans la conception et réalisation de solutions d'éclairage dans les espaces intérieurs et extérieurs, j'accompagne les installateurs, architectes, bureau d'études, clients divers pour tous type de projets tout en respectant les contraintes techniques et économiques.",
-    seed: "dal-team-alain-knaub",
-  },
 ];
